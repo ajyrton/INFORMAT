@@ -11,11 +11,28 @@
 <header class="top">
   <div class="wrap">
     <h1>Noticias <span>contrastadas</span></h1>
-    <p class="sub">La misma noticia, contada por distintos medios. Compara titulares y lee cada versión en su fuente.</p>
+    <p class="sub">La misma noticia, contada por distintos medios. Cambia entre versiones y lee cada una en su fuente.</p>
+
+    <nav class="views" role="tablist" aria-label="Sección">
+      <button type="button" role="tab" data-view="noticias" aria-selected="true">Noticias</button>
+      <button type="button" role="tab" data-view="bulos" aria-selected="false">Bulos desmentidos <span id="bulos-count" class="count"></span></button>
+    </nav>
+
     <div class="controls">
       <input id="q" type="search" placeholder="Buscar noticia o medio…" aria-label="Buscar">
-      <label class="chk"><input id="multi" type="checkbox" checked> Solo noticias con 2+ medios</label>
-      <select id="lang" aria-label="Idioma">
+      <div class="filter">
+        <button id="sources-btn" type="button" aria-expanded="false" aria-controls="sources-panel">Fuentes <span id="sources-count" class="count"></span></button>
+        <div id="sources-panel" class="panel" hidden>
+          <div class="panel-actions">
+            <button type="button" data-all="1">Todas</button>
+            <button type="button" data-all="0">Ninguna</button>
+          </div>
+          <fieldset><legend>Medios</legend><div id="media-list"></div></fieldset>
+          <fieldset><legend>Verificadores</legend><div id="checker-list"></div></fieldset>
+        </div>
+      </div>
+      <label class="chk news-only"><input id="multi" type="checkbox" checked> Solo noticias con 2+ medios</label>
+      <select id="lang" class="news-only" aria-label="Idioma">
         <option value="">Todos los idiomas</option>
         <option value="es">Español</option>
         <option value="en">Inglés</option>
@@ -26,8 +43,9 @@
 </header>
 
 <main class="wrap">
+  <p id="bulos-intro" class="intro" hidden>Desmentidos publicados por verificadores independientes en los últimos 14 días. El titular es el del verificador: explica qué contenido es falso y por qué.</p>
   <div id="list" aria-live="polite"></div>
-  <p id="empty" class="empty" hidden>No hay noticias que coincidan con el filtro.</p>
+  <p id="empty" class="empty" hidden>No hay resultados que coincidan con el filtro.</p>
 </main>
 
 <footer class="wrap foot">

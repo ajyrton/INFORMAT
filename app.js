@@ -1,10 +1,15 @@
 (async function () {
-  const list = document.getElementById("list");
-  const empty = document.getElementById("empty");
-  const q = document.getElementById("q");
-  const multi = document.getElementById("multi");
-  const lang = document.getElementById("lang");
-  const updated = document.getElementById("updated");
+  const $ = (id) => document.getElementById(id);
+  const list = $("list");
+  const empty = $("empty");
+  const q = $("q");
+  const multi = $("multi");
+  const lang = $("lang");
+  const updated = $("updated");
+  const sourcesBtn = $("sources-btn");
+  const sourcesPanel = $("sources-panel");
+  const sourcesCount = $("sources-count");
+  const bulosIntro = $("bulos-intro");
 
   let data;
   try {
@@ -15,49 +20,179 @@
       "Si abres el archivo directamente, usa un servidor local (python -m http.server).</p>";
     return;
   }
+  const bulos = data.bulos || [];
 
   const fmt = new Intl.DateTimeFormat("es-ES", { dateStyle: "medium", timeStyle: "short" });
   updated.textContent = `Actualizado: ${fmt.format(new Date(data.actualizado))} · ` +
     `${data.total_noticias} noticias analizadas`;
+  $("bulos-count").textContent = bulos.length || "";
 
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const safeUrl = (u) => (/^https?:\/\//i.test(u) ? u : "#");
 
-  function render() {
-    const term = q.value.trim().toLowerCase();
-    const onlyMulti = multi.checked;
-    const l = lang.value;
+  // ---------- Filtro de fuentes (se recuerda en este navegador) ----------
+  const uniq = (arr) => [...new Set(arr)].sort((a, b) => a.localeCompare(b, "es"));
+  const media = uniq(data.historias.flatMap((h) => h.fuentes.map((f) => f.medio)));
+  const checkers = uniq(bulos.map((b) => b.medio));
+  const STORE_KEY = "nc-fuentes-ocultas";
+  let hidden = new Set();
+  try { hidden = new Set(JSON.parse(localStorage.getItem(STORE_KEY)) || []); } catch (e) { /* sin storage */ }
+  const saveHidden = () => {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify([...hidden])); } catch (e) { /* sin storage */ }
+  };
+  const visible = (medio) => !hidden.has(medio);
 
-    const stories = data.historias.filter((h) => {
-      if (onlyMulti && h.num_medios < 2) return false;
-      if (l && !h.fuentes.some((f) => f.idioma === l)) return false;
-      if (term) {
-        const hay = h.fuentes.map((f) => f.medio + " " + f.titulo).join(" ").toLowerCase();
-        if (!hay.includes(term)) return false;
-      }
-      return true;
-    });
+  const checkbox = (m) => `<label class="chk"><input type="checkbox" value="${esc(m)}" ${visible(m) ? "checked" : ""}> ${esc(m)}</label>`;
+  $("media-list").innerHTML = media.map(checkbox).join("");
+  $("checker-list").innerHTML = checkers.map(checkbox).join("") || '<p class="meta">Sin datos todavía.</p>';
+  const allBoxes = () => [...sourcesPanel.querySelectorAll("input[type=checkbox]")];
 
-    empty.hidden = stories.length > 0;
-    list.innerHTML = stories.map((h) => `
-      <article class="story">
-        <h2>${esc(h.titulo)}</h2>
-        <div class="badges">
-          <span class="badge ${h.num_medios >= 3 ? "hot" : ""}">${h.num_medios} ${h.num_medios === 1 ? "medio" : "medios"}</span>
-          <span class="badge">${esc(fmt.format(new Date(h.fecha)))}</span>
-        </div>
-        <ul class="sources">
-          ${h.fuentes.map((f) => `
-            <li>
-              <span class="medio">${esc(f.medio)}</span><span class="lang">${esc(f.idioma)}</span>
-              <a href="${esc(safeUrl(f.enlace))}" target="_blank" rel="noopener noreferrer">${esc(f.titulo)}</a>
-              ${f.extracto ? `<p>${esc(f.extracto)}</p>` : ""}
-            </li>`).join("")}
-        </ul>
-      </article>`).join("");
+  function updateSourcesCount() {
+    const total = media.length + checkers.length;
+    const shown = allBoxes().filter((b) => b.checked).length;
+    sourcesCount.textContent = shown === total ? "" : `${shown}/${total}`;
   }
 
+  sourcesBtn.addEventListener("click", () => {
+    const open = sourcesPanel.hidden;
+    sourcesPanel.hidden = !open;
+    sourcesBtn.setAttribute("aria-expanded", String(open));
+  });
+  document.addEventListener("click", (e) => {
+    if (!sourcesPanel.hidden && !e.target.closest(".filter")) {
+      sourcesPanel.hidden = true;
+      sourcesBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+  sourcesPanel.addEventListener("change", (e) => {
+    const box = e.target;
+    if (box.checked) hidden.delete(box.value); else hidden.add(box.value);
+    saveHidden(); updateSourcesCount(); render();
+  });
+  sourcesPanel.querySelectorAll("[data-all]").forEach((btn) => btn.addEventListener("click", () => {
+    const on = btn.dataset.all === "1";
+    allBoxes().forEach((b) => { b.checked = on; if (on) hidden.delete(b.value); else hidden.add(b.value); });
+    saveHidden(); updateSourcesCount(); render();
+  }));
+
+  // ---------- Secciones ----------
+  let view = "noticias";
+  const viewTabs = [...document.querySelectorAll(".views [data-view]")];
+  viewTabs.forEach((tab) => tab.addEventListener("click", () => {
+    view = tab.dataset.view;
+    viewTabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+    document.querySelectorAll(".news-only").forEach((el) => { el.hidden = view !== "noticias"; });
+    bulosIntro.hidden = view !== "bulos";
+    q.placeholder = view === "bulos" ? "Buscar bulo o verificador…" : "Buscar noticia o medio…";
+    render();
+  }));
+
+  // ---------- Noticias con versiones ----------
+  const selected = new Map(); // índice de historia -> medio elegido
+
+  function storyHtml(h, idx, fuentes) {
+    const medio = selected.get(idx);
+    const f = fuentes.find((x) => x.medio === medio) || fuentes[0];
+    const others = h.num_medios - fuentes.length;
+    const related = h.bulos_relacionados || [];
+    return `
+      <article class="story" data-idx="${idx}">
+        <div class="badges">
+          <span class="badge ${fuentes.length >= 3 ? "hot" : ""}">${fuentes.length} ${fuentes.length === 1 ? "versión" : "versiones"}</span>
+          <span class="badge">${esc(fmt.format(new Date(h.fecha)))}</span>
+          ${others > 0 ? `<span class="badge muted">+${others} en fuentes ocultas</span>` : ""}
+        </div>
+        ${fuentes.length > 1 ? `
+        <div class="versions" role="tablist" aria-label="Versiones de la noticia">
+          ${fuentes.map((x) => `<button type="button" role="tab" data-medio="${esc(x.medio)}"
+              aria-selected="${x === f}">${esc(x.medio)}</button>`).join("")}
+        </div>` : ""}
+        <div class="version" role="tabpanel">
+          <p class="medio">${esc(f.medio)}<span class="lang">${esc(f.idioma)}</span>
+            <span class="when">${esc(fmt.format(new Date(f.fecha)))}</span></p>
+          <h2><a href="${esc(safeUrl(f.enlace))}" target="_blank" rel="noopener noreferrer">${esc(f.titulo)}</a></h2>
+          ${f.extracto ? `<p class="extract">${esc(f.extracto)}</p>` : ""}
+          <a class="read" href="${esc(safeUrl(f.enlace))}" target="_blank" rel="noopener noreferrer">Leer en ${esc(f.medio)} →</a>
+        </div>
+        ${related.length ? `
+        <div class="hoax-note">
+          <strong>⚠ Bulo relacionado desmentido</strong>
+          <ul>${related.map((b) => `<li><a href="${esc(safeUrl(b.enlace))}" target="_blank" rel="noopener noreferrer">${esc(b.titulo)}</a>
+            <span class="by">— ${esc(b.medio)}</span></li>`).join("")}</ul>
+        </div>` : ""}
+      </article>`;
+  }
+
+  function visibleFuentes(h) {
+    return h.fuentes.filter((f) => visible(f.medio));
+  }
+
+  function renderNews(term) {
+    const onlyMulti = multi.checked;
+    const l = lang.value;
+    const rows = [];
+    data.historias.forEach((h, idx) => {
+      const fuentes = visibleFuentes(h);
+      if (!fuentes.length) return;
+      if (onlyMulti && fuentes.length < 2) return;
+      if (l && !fuentes.some((f) => f.idioma === l)) return;
+      if (term) {
+        const hay = fuentes.map((f) => f.medio + " " + f.titulo).join(" ").toLowerCase();
+        if (!hay.includes(term)) return;
+      }
+      rows.push(storyHtml(h, idx, fuentes));
+    });
+    return rows;
+  }
+
+  function renderBulos(term) {
+    return bulos.filter((b) => visible(b.medio) &&
+      (!term || (b.medio + " " + b.titulo + " " + (b.extracto || "")).toLowerCase().includes(term)))
+      .map((b) => `
+        <article class="story hoax">
+          <div class="badges">
+            <span class="badge danger">Desmentido por ${esc(b.medio)}</span>
+            <span class="badge">${esc(fmt.format(new Date(b.fecha)))}</span>
+          </div>
+          <h2><a href="${esc(safeUrl(b.enlace))}" target="_blank" rel="noopener noreferrer">${esc(b.titulo)}</a></h2>
+          ${b.extracto ? `<p class="extract">${esc(b.extracto)}</p>` : ""}
+          <a class="read" href="${esc(safeUrl(b.enlace))}" target="_blank" rel="noopener noreferrer">Ver la verificación en ${esc(b.medio)} →</a>
+        </article>`);
+  }
+
+  function render() {
+    const term = q.value.trim().toLowerCase();
+    const rows = view === "bulos" ? renderBulos(term) : renderNews(term);
+    empty.hidden = rows.length > 0;
+    list.innerHTML = rows.join("");
+  }
+
+  // Cambiar de versión sin repintar toda la lista
+  list.addEventListener("click", (e) => {
+    const btn = e.target.closest(".versions [data-medio]");
+    if (!btn) return;
+    const card = btn.closest(".story");
+    const idx = Number(card.dataset.idx);
+    selected.set(idx, btn.dataset.medio);
+    const tmp = document.createElement("div");
+    tmp.innerHTML = storyHtml(data.historias[idx], idx, visibleFuentes(data.historias[idx]));
+    const fresh = tmp.firstElementChild;
+    card.replaceWith(fresh);
+    fresh.querySelector(`.versions [data-medio="${CSS.escape(btn.dataset.medio)}"]`).focus();
+  });
+  // Flechas izquierda/derecha para moverse entre versiones
+  list.addEventListener("keydown", (e) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(e.key)) return;
+    const btn = e.target.closest(".versions [data-medio]");
+    if (!btn) return;
+    const tabs = [...btn.parentElement.children];
+    const next = tabs[(tabs.indexOf(btn) + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+    next.click();
+    e.preventDefault();
+  });
+
   [q, multi, lang].forEach((el) => el.addEventListener("input", render));
+  updateSourcesCount();
   render();
 })();
