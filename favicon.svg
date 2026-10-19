@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#c4361b"/>
+  <g fill="#fff">
+    <!-- la paloma hace de travesaño de la T -->
+    <path d="M12.5 27.5C13 23.5 17 21.5 20.5 23.5 23 25 24 27.5 26.5 29 31 31.5 38 31 44 29.5L57 25.5 52.5 31 58 33C51 37.5 43 40.5 35 41 26 41.5 18.5 38 15.5 32.5L8.5 30Z"/>
+    <path d="M24 29C26 20 31 12.5 39.5 7 39 11 40.5 13 43.5 13.5 41.5 16 42.5 18.5 45.5 19.5 42.5 22 42.5 24.5 45 26 39 29.5 31 31 24 29Z"/>
+    <!-- palo de la T, inclinado como la T en cursiva del logo -->
+    <path d="M28.5 38H37.5L33.5 57H24.5Z"/>
+  </g>
+  <circle cx="17.6" cy="26.4" r="1.5" fill="#c4361b"/>
+</svg>
