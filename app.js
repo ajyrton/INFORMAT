@@ -136,7 +136,7 @@
     const names = fuentes.slice(0, 4).map((x) => esc(x.medio)).join(" · ") +
       (fuentes.length > 4 ? ` · +${fuentes.length - 4}` : "");
     return `
-      <article class="story ${image ? "has-img" : ""}" data-idx="${idx}">
+      <article class="story ${image ? "has-img" : ""}" data-id="${esc(storyId(h, idx))}">
         ${img(image, "thumb")}
         <div class="story-body">
           <div class="badges">
@@ -186,13 +186,17 @@
     list.innerHTML = rows.map((r) => storyHtml(r.h, r.idx, r.fuentes)).join("");
   }
 
-  // ---------- Vista en columnas: una por medio ----------
-  const detail = $("detail");
+  // ---------- Página de cada noticia: todos los medios y sus versiones ----------
+  const page = $("page");
+  const listControls = $("list-controls");
+  const storyId = (h, idx) => h.id || "i" + idx;
+  let listScroll = 0;
 
-  function columnHtml(f) {
+  function reportHtml(f) {
     const link = esc(safeUrl(f.enlace));
+    const text = f.entradilla || f.extracto;
     return `
-      <section class="col ${f.bulo ? "is-hoax" : ""}">
+      <section class="col report ${f.bulo ? "is-hoax" : ""}">
         <header class="col-head">${f.bulo ? "⚠ " : ""}${esc(f.medio)}<span class="lang">${esc(f.idioma)}</span>${f.sesgo ? `<span class="sb-chip ${f.sesgo}">${esc(f.sesgo_detalle || f.sesgo)}</span>` : ""}</header>
         ${img(f.imagen, "col-img")}
         ${f.bulo ? `
@@ -203,38 +207,81 @@
         </div>` : ""}
         <h3><a href="${link}" target="_blank" rel="noopener noreferrer">${esc(f.titulo)}</a></h3>
         <p class="when">${esc(fmt.format(new Date(f.fecha)))}</p>
-        ${f.extracto ? `<p class="extract">${esc(f.extracto)}</p>` : ""}
-        <a class="read" href="${link}" target="_blank" rel="noopener noreferrer">Leer en ${esc(f.medio)} →</a>
+        ${text ? `<p class="lead">${esc(text)}</p>` : ""}
+        <a class="read" href="${link}" target="_blank" rel="noopener noreferrer">Seguir leyendo en ${esc(f.medio)} →</a>
       </section>`;
   }
 
-  function openDetail(idx) {
-    const h = data.historias[idx];
+  function pageHtml(h) {
     const fuentes = visibleFuentes(h);
+    if (!fuentes.length) return `<a class="back" href="#">← Todas las noticias</a>
+      <p class="empty">Todos los medios de esta noticia están ocultos en «Fuentes».</p>`;
     const t = headline(h, fuentes);
-    const sbExtra = narrativeHtml(h, fuentes);
-    detail.innerHTML = `
-      <div class="detail-head">
-        <div>
-          <h2>«${esc(t.titulo)}»</h2>
-          <p class="attrib">Titular de ${esc(t.medio)} · ${fuentes.length} ${fuentes.length === 1 ? "versión" : "versiones"}</p>
-          ${tagsHtml(h)}
+    const hoaxes = fuentes.filter((x) => x.bulo).length;
+    const sb = narrativeHtml(h, fuentes);
+    return `
+      <a class="back" href="#">← Todas las noticias</a>
+      <header class="page-head">
+        <div class="badges">
+          <span class="badge ${fuentes.length >= 3 ? "hot" : ""}">${fuentes.length} ${fuentes.length === 1 ? "medio" : "medios"}</span>
+          <span class="badge">${esc(fmt.format(new Date(h.fecha)))}</span>
+          ${hoaxes ? `<span class="badge danger">⚠ ${hoaxes === 1 ? "1 versión desmentida" : `${hoaxes} versiones desmentidas`}</span>` : ""}
         </div>
-        <button type="button" class="close" aria-label="Cerrar">✕</button>
-      </div>
-      ${sbExtra ? `<div class="sb-detail">${sbExtra}</div>` : ""}
-      <div class="columns" style="--n:${fuentes.length}">${fuentes.map(columnHtml).join("")}</div>`;
-    detail.showModal();
-    // abrir siempre arriba del todo (el foco automático puede desplazar el panel)
-    detail.querySelector(".close").focus({ preventScroll: true });
-    detail.scrollTop = 0;
-    detail.querySelector(".columns").scrollLeft = 0;
+        <h2 class="page-title">«${esc(t.titulo)}»</h2>
+        <p class="attrib">Titular de ${esc(t.medio)}</p>
+        ${tagsHtml(h)}
+      </header>
+      ${sb ? `<div class="sb-detail">${sb}</div>` : ""}
+      <h3 class="section-title">${fuentes.length > 1 ? `Cómo la cuenta cada medio (${fuentes.length})` : "La noticia"}</h3>
+      <div class="reports">${fuentes.map(reportHtml).join("")}</div>
+      <p class="meta page-note">Cada versión muestra el comienzo del texto que el propio medio publica en su feed.
+        La noticia completa se lee en la web de cada medio.</p>`;
   }
 
-  detail.addEventListener("click", (e) => {
-    if (e.target === detail || e.target.closest(".close")) { detail.close(); return; }
+  function showList() {
+    page.hidden = true;
+    page.innerHTML = "";
+    list.hidden = false;
+    listControls.hidden = false;
+    document.body.classList.remove("story-view");
+    document.title = "INFORMAT";
+    render();
+    window.scrollTo(0, listScroll);
+  }
+
+  function showStory(id) {
+    const idx = data.historias.findIndex((h, i) => storyId(h, i) === id);
+    const h = data.historias[idx];
+    page.innerHTML = h ? pageHtml(h)
+      : `<a class="back" href="#">← Todas las noticias</a>
+         <p class="empty">Esta noticia ya no está en portada: INFORMAT muestra las de las últimas 48 horas.</p>`;
+    page.hidden = false;
+    list.hidden = true;
+    empty.hidden = true;
+    listControls.hidden = true;
+    document.body.classList.add("story-view");
+    if (h) {
+      const fuentes = visibleFuentes(h);
+      document.title = `${headline(h, fuentes.length ? fuentes : h.fuentes).titulo} · INFORMAT`;
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function route() {
+    const m = location.hash.match(/^#noticia\/([\w-]+)$/);
+    if (m) showStory(m[1]); else showList();
+  }
+  window.addEventListener("hashchange", route);
+
+  // En la página de la noticia, un # lleva a la portada filtrada por esa etiqueta
+  page.addEventListener("click", (e) => {
     const tag = e.target.closest(".tag");
-    if (tag) { detail.close(); setTag(tag.dataset.tag); }
+    if (!tag) return;
+    listScroll = 0;
+    activeTag = tag.dataset.tag;
+    tagFilter.hidden = false;
+    tagFilter.querySelector("span").textContent = "#" + activeTag;
+    location.hash = "";
   });
 
   list.addEventListener("click", (e) => {
@@ -242,10 +289,12 @@
     if (tag) { setTag(tag.dataset.tag); return; }
     if (e.target.closest("a")) return;
     const card = e.target.closest(".story");
-    if (card) openDetail(Number(card.dataset.idx));
+    if (!card) return;
+    listScroll = window.scrollY;
+    location.hash = "noticia/" + card.dataset.id;
   });
 
   [q, multi, lang, sort].forEach((el) => el.addEventListener("input", render));
   updateSourcesCount();
-  render();
+  route();
 })();

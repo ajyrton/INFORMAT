@@ -14,7 +14,7 @@ Web que recopila la misma noticia contada por distintos medios. Coste: 0 €.
 6. Opcional: `summarize.py` genera con IA un resumen corto del enfoque de la izquierda y de la derecha.
    Sin configurar nada, la web muestra el titular más reciente de cada lado (coste 0).
 7. Guarda el resultado en `data/news.json`.
-8. `index.html` + `app.js` muestran cada historia; al pulsarla se comparan las versiones de cada medio en columnas.
+8. `index.html` + `app.js` muestran cada historia; al pulsarla se abre su página (`#noticia/<id>`) con la versión y la entradilla de cada medio.
 
 Solo se guardan titular, enlace, fecha y un extracto corto. El contenido completo se lee siempre en el medio original.
 

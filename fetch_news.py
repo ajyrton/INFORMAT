@@ -10,6 +10,7 @@ Uso:
     python fetch_news.py --sample sample_items.json   # usa datos de prueba
 """
 import argparse
+import hashlib
 import html
 import json
 import math
@@ -31,6 +32,10 @@ MAX_AGE_HOURS = 48          # ignorar noticias más antiguas
 SIM_THRESHOLD = 0.30        # similitud mínima para agrupar (0-1)
 MAX_PER_FEED = 40
 SNIPPET_LEN = 200
+# Entradilla de la página de cada noticia: las primeras frases del texto que el medio
+# publica en su feed. Se limita a propósito (derechos de autor): el artículo completo
+# se lee siempre en la web del medio.
+LEAD_LEN = 500
 HOAX_MAX_AGE_DAYS = 14      # antigüedad máxima de los desmentidos
 HOAX_SIM_THRESHOLD = 0.30   # similitud mínima entre un titular y un desmentido para marcarlo como bulo
 
@@ -71,6 +76,21 @@ def clean_snippet(text: str) -> str:
     text = re.sub(r"<[^>]+>", " ", html.unescape(text or ""))
     text = re.sub(r"\s+", " ", text).strip()
     return text if len(text) <= SNIPPET_LEN else text[:SNIPPET_LEN].rsplit(" ", 1)[0] + "…"
+
+
+def lead_text(entry) -> str:
+    """Primeras frases del texto del feed (resumen o contenido), cortadas en un punto."""
+    texts = [entry.get("summary", "")] + [c.get("value", "") for c in entry.get("content", []) or []]
+    # párrafos completos en el orden en que aparecen, del texto más largo
+    raw = max(texts, key=lambda t: len(re.sub(r"<[^>]+>", "", t or "")))
+    paras = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html.unescape(p))).strip()
+             for p in re.split(r"(?i)</p>|<br\s*/?>|\n{2,}", raw or "")]
+    text = re.sub(r"\s+([,.;:)»])", r"\1", " ".join(p for p in paras if p))
+    if len(text) <= LEAD_LEN:
+        return text
+    cut = text[:LEAD_LEN]
+    end = max(cut.rfind(". "), cut.rfind(".» "), cut.rfind('." '))
+    return cut[:end + 1] if end > LEAD_LEN * 0.4 else cut.rsplit(" ", 1)[0] + "…"
 
 
 def parse_date(entry):
@@ -125,6 +145,7 @@ def fetch_items(feeds, max_age_hours=MAX_AGE_HOURS):
                 "medio": f["medio"], "idioma": f.get("idioma", "es"),
                 "titulo": title, "enlace": link,
                 "extracto": clean_snippet(e.get("summary", "")),
+                "entradilla": lead_text(e),
                 "fecha": date.isoformat(),
                 "imagen": find_image(e),
                 "categorias": [t["term"] for t in e.get("tags", []) if t.get("term")][:8],
@@ -236,7 +257,8 @@ def neutral_index(idxs, items, vecs, flagged):
 
 
 def build_output(items, groups, vecs, flagged=None):
-    fields = ("medio", "idioma", "titulo", "enlace", "extracto", "fecha", "imagen", "sesgo", "sesgo_detalle")
+    fields = ("medio", "idioma", "titulo", "enlace", "extracto", "entradilla", "fecha", "imagen",
+              "sesgo", "sesgo_detalle")
     flagged = flagged or {}
     out = []
     for g in groups:
@@ -245,10 +267,14 @@ def build_output(items, groups, vecs, flagged=None):
         fuentes = []
         for i in idxs:
             f = {k: items[i][k] for k in fields if items[i].get(k)}
+            if len(f.get("entradilla", "")) <= len(f.get("extracto", "")):
+                f.pop("entradilla", None)  # no aporta nada nuevo
             if i in flagged:
                 f["bulo"] = flagged[i]
             fuentes.append(f)
+        # id estable entre actualizaciones: el enlace de la noticia más antigua del grupo
         story = {
+            "id": hashlib.sha1(items[idxs[-1]]["enlace"].encode("utf-8")).hexdigest()[:10],
             "titulo": items[neutral]["titulo"],
             "titulo_medio": items[neutral]["medio"],
             "fecha": max(f["fecha"] for f in fuentes),

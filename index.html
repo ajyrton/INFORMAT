@@ -14,6 +14,7 @@
     <h1><a class="logo" href="./" title="Ir a la portada">INFORMA<span>T</span></a></h1>
     <p class="sub">La misma noticia, contada por distintos medios. Pulsa una noticia para comparar cómo la cuenta cada uno.</p>
 
+    <div id="list-controls">
     <div class="controls">
       <input id="q" type="search" placeholder="Buscar noticia, medio o #tema…" aria-label="Buscar">
       <div class="filter">
@@ -39,12 +40,14 @@
     </div>
     <button id="tag-filter" type="button" class="tag-filter" hidden>Filtrando por <span></span> <b aria-hidden="true">✕</b><span class="sr">Quitar filtro</span></button>
     <p id="updated" class="meta"></p>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
+<main id="main" class="wrap">
   <div id="list" aria-live="polite"></div>
   <p id="empty" class="empty" hidden>No hay resultados que coincidan con el filtro.</p>
+  <article id="page" class="page" hidden></article>
 </main>
 
 <footer class="wrap foot">
@@ -54,8 +57,6 @@
   <a href="sesgo_medios.json">clasificación editorial provisional</a> y sirve para mostrar cómo cuenta cada lado una misma noticia.
   Los resúmenes marcados como IA pueden contener errores.
 </footer>
-
-<dialog id="detail" class="detail" aria-label="Versiones de la noticia"></dialog>
 
 <script src="app.js"></script>
 </body>
