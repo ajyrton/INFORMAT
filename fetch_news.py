@@ -26,7 +26,7 @@ SIM_THRESHOLD = 0.30        # similitud mínima para agrupar (0-1)
 MAX_PER_FEED = 40
 SNIPPET_LEN = 200
 HOAX_MAX_AGE_DAYS = 14      # antigüedad máxima de los desmentidos
-HOAX_SIM_THRESHOLD = 0.20   # similitud mínima para enlazar un bulo con una noticia
+HOAX_SIM_THRESHOLD = 0.30   # similitud mínima entre un titular y un desmentido para marcarlo como bulo
 
 # Titulares de verificadores que indican que algo es falso o engañoso
 # (se comparan sin tildes y en minúsculas).
@@ -36,6 +36,10 @@ HOAX_RE = re.compile(
     r"|\b(hech|cread|generad)[oa]s? con (ia|inteligencia artificial)"
     r"|\b(es|son) de (19|20)\d\d\b|\bse grabo en (19|20)\d\d|\benganos[oa]|\bfake\b")
 REAL_RE = re.compile(r"^(es|son) reales?\b|\bes cierto\b|\bes verdad\b")
+# Noticias que informan SOBRE un bulo (lo desmienten o lo denuncian): no son bulos.
+REPORTS_HOAX_RE = re.compile(
+    r"\bfals[oa]s?\b|\bfalsamente\b|\bbulos?\b|\bdesmient|\bdesinforma|\bfake\b|\bmanipulad"
+    r"|\b(hech|cread|generad)[oa]s? con (ia|inteligencia artificial)|\bno es (cierto|verdad)\b|\bverific")
 
 STOPWORDS = set("""
 a al algo ante con contra cual cuando de del desde donde durante e el ella ellos en entre era es esta este esto
@@ -78,7 +82,7 @@ def fetch_items(feeds, max_age_hours=MAX_AGE_HOURS):
     items = []
     for f in feeds:
         try:
-            parsed = feedparser.parse(f["url"], agent="NoticiasContrastadas/1.0")
+            parsed = feedparser.parse(f["url"], agent="INFORMAT/1.0")
         except Exception as e:  # noqa: BLE001
             print(f"[!] {f['medio']}: {e}", file=sys.stderr)
             continue
@@ -153,34 +157,41 @@ def is_hoax_debunk(item):
     return bool(HOAX_RE.search(t)) and not REAL_RE.search(t)
 
 
-def link_hoaxes(groups, vecs, hoax_vecs):
-    """Para cada bulo, devuelve los índices de grupo con los que guarda relación."""
-    links = []
-    for hv in hoax_vecs:
-        related = [gi for gi, g in enumerate(groups)
-                   if max(cosine(hv, vecs[m]) for m in g["members"]) >= HOAX_SIM_THRESHOLD]
-        links.append(related)
-    return links
+def flag_hoaxes(items, vecs, hoaxes, hoax_vecs):
+    """Devuelve {índice de noticia: desmentido} para los titulares que un verificador
+    ha desmentido. Se ignoran las noticias que solo informan sobre el bulo."""
+    flagged = {}
+    for i, (it, v) in enumerate(zip(items, vecs)):
+        if REPORTS_HOAX_RE.search(normalize(it["titulo"] + " " + it["extracto"])):
+            continue
+        best, best_sim = None, HOAX_SIM_THRESHOLD
+        for h, hv in zip(hoaxes, hoax_vecs):
+            sim = cosine(v, hv)
+            if sim >= best_sim:
+                best, best_sim = h, sim
+        if best is not None:
+            flagged[i] = {k: best[k] for k in ("medio", "titulo", "enlace")}
+    return flagged
 
 
-def build_output(items, groups, hoaxes=(), hoax_links=()):
+def build_output(items, groups, flagged=None):
     fields = ("medio", "idioma", "titulo", "enlace", "extracto", "fecha")
-    related = {}
-    for h, gis in zip(hoaxes, hoax_links):
-        for gi in gis:
-            related.setdefault(gi, []).append({k: h[k] for k in ("medio", "titulo", "enlace")})
+    flagged = flagged or {}
     out = []
-    for gi, g in enumerate(groups):
-        members = sorted((items[i] for i in g["members"]), key=lambda x: x["fecha"], reverse=True)
-        story = {
-            "titulo": members[0]["titulo"],
-            "fecha": max(m["fecha"] for m in members),
-            "num_medios": len({m["medio"] for m in members}),
-            "fuentes": [{k: m[k] for k in fields} for m in members],
-        }
-        if gi in related:
-            story["bulos_relacionados"] = related[gi]
-        out.append(story)
+    for g in groups:
+        idxs = sorted(g["members"], key=lambda i: items[i]["fecha"], reverse=True)
+        fuentes = []
+        for i in idxs:
+            f = {k: items[i][k] for k in fields}
+            if i in flagged:
+                f["bulo"] = flagged[i]
+            fuentes.append(f)
+        out.append({
+            "titulo": fuentes[0]["titulo"],
+            "fecha": max(f["fecha"] for f in fuentes),
+            "num_medios": len({f["medio"] for f in fuentes}),
+            "fuentes": fuentes,
+        })
     # primero las más cubiertas, luego las más recientes
     out.sort(key=lambda x: (x["num_medios"], x["fecha"]), reverse=True)
     return out
@@ -209,21 +220,20 @@ def main():
     vecs = build_vectors(items + hoaxes)
     news_vecs, hoax_vecs = vecs[:len(items)], vecs[len(items):]
     groups = cluster(items, news_vecs)
-    hoax_links = link_hoaxes(groups, news_vecs, hoax_vecs)
-    historias = build_output(items, groups, hoaxes, hoax_links)
+    flagged = flag_hoaxes(items, news_vecs, hoaxes, hoax_vecs)
+    historias = build_output(items, groups, flagged)
     result = {
         "actualizado": datetime.now(timezone.utc).isoformat(),
         "total_noticias": len(items),
         "historias": historias,
-        "bulos": [{k: h[k] for k in ("medio", "titulo", "enlace", "extracto", "fecha")} for h in hoaxes],
     }
     out = ROOT / "data" / "news.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
     multi = sum(1 for h in result["historias"] if h["num_medios"] > 1)
     print(f"{len(items)} noticias -> {len(result['historias'])} historias ({multi} con varios medios)")
-    print(f"{len(checks)} verificaciones -> {len(hoaxes)} bulos desmentidos, "
-          f"{sum(1 for h in historias if 'bulos_relacionados' in h)} noticias con bulo relacionado")
+    print(f"{len(checks)} verificaciones -> {len(hoaxes)} desmentidos -> "
+          f"{len(flagged)} titulares marcados como bulo")
 
 
 if __name__ == "__main__":

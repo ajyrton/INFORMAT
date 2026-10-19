@@ -1,4 +1,4 @@
-# Noticias contrastadas
+# INFORMAT
 
 Web que recopila la misma noticia contada por distintos medios. Coste: 0 €.
 

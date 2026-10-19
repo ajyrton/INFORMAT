@@ -3,20 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noticias Contrastadas</title>
+<title>INFORMAT</title>
 <meta name="description" content="La misma noticia, contada por distintos medios.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <h1>Noticias <span>contrastadas</span></h1>
+    <h1>INFOR<span>MAT</span></h1>
     <p class="sub">La misma noticia, contada por distintos medios. Cambia entre versiones y lee cada una en su fuente.</p>
-
-    <nav class="views" role="tablist" aria-label="Sección">
-      <button type="button" role="tab" data-view="noticias" aria-selected="true">Noticias</button>
-      <button type="button" role="tab" data-view="bulos" aria-selected="false">Bulos desmentidos <span id="bulos-count" class="count"></span></button>
-    </nav>
 
     <div class="controls">
       <input id="q" type="search" placeholder="Buscar noticia o medio…" aria-label="Buscar">
@@ -28,11 +23,10 @@
             <button type="button" data-all="0">Ninguna</button>
           </div>
           <fieldset><legend>Medios</legend><div id="media-list"></div></fieldset>
-          <fieldset><legend>Verificadores</legend><div id="checker-list"></div></fieldset>
         </div>
       </div>
-      <label class="chk news-only"><input id="multi" type="checkbox" checked> Solo noticias con 2+ medios</label>
-      <select id="lang" class="news-only" aria-label="Idioma">
+      <label class="chk"><input id="multi" type="checkbox" checked> Solo noticias con 2+ medios</label>
+      <select id="lang" aria-label="Idioma">
         <option value="">Todos los idiomas</option>
         <option value="es">Español</option>
         <option value="en">Inglés</option>
@@ -43,13 +37,13 @@
 </header>
 
 <main class="wrap">
-  <p id="bulos-intro" class="intro" hidden>Desmentidos publicados por verificadores independientes en los últimos 14 días. El titular es el del verificador: explica qué contenido es falso y por qué.</p>
   <div id="list" aria-live="polite"></div>
   <p id="empty" class="empty" hidden>No hay resultados que coincidan con el filtro.</p>
 </main>
 
 <footer class="wrap foot">
-  Solo se muestran titulares y enlaces. Todo el contenido pertenece a cada medio.
+  Solo se muestran titulares y enlaces. Todo el contenido pertenece a cada medio.<br>
+  Los titulares marcados como bulo coinciden con un desmentido de Maldita.es, Newtral, EFE Verifica o Verificat.
 </footer>
 
 <script src="app.js"></script>

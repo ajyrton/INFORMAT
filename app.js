@@ -9,7 +9,6 @@
   const sourcesBtn = $("sources-btn");
   const sourcesPanel = $("sources-panel");
   const sourcesCount = $("sources-count");
-  const bulosIntro = $("bulos-intro");
 
   let data;
   try {
@@ -20,12 +19,10 @@
       "Si abres el archivo directamente, usa un servidor local (python -m http.server).</p>";
     return;
   }
-  const bulos = data.bulos || [];
 
   const fmt = new Intl.DateTimeFormat("es-ES", { dateStyle: "medium", timeStyle: "short" });
   updated.textContent = `Actualizado: ${fmt.format(new Date(data.actualizado))} · ` +
     `${data.total_noticias} noticias analizadas`;
-  $("bulos-count").textContent = bulos.length || "";
 
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -34,7 +31,6 @@
   // ---------- Filtro de fuentes (se recuerda en este navegador) ----------
   const uniq = (arr) => [...new Set(arr)].sort((a, b) => a.localeCompare(b, "es"));
   const media = uniq(data.historias.flatMap((h) => h.fuentes.map((f) => f.medio)));
-  const checkers = uniq(bulos.map((b) => b.medio));
   const STORE_KEY = "nc-fuentes-ocultas";
   let hidden = new Set();
   try { hidden = new Set(JSON.parse(localStorage.getItem(STORE_KEY)) || []); } catch (e) { /* sin storage */ }
@@ -45,11 +41,10 @@
 
   const checkbox = (m) => `<label class="chk"><input type="checkbox" value="${esc(m)}" ${visible(m) ? "checked" : ""}> ${esc(m)}</label>`;
   $("media-list").innerHTML = media.map(checkbox).join("");
-  $("checker-list").innerHTML = checkers.map(checkbox).join("") || '<p class="meta">Sin datos todavía.</p>';
   const allBoxes = () => [...sourcesPanel.querySelectorAll("input[type=checkbox]")];
 
   function updateSourcesCount() {
-    const total = media.length + checkers.length;
+    const total = media.length;
     const shown = allBoxes().filter((b) => b.checked).length;
     sourcesCount.textContent = shown === total ? "" : `${shown}/${total}`;
   }
@@ -76,18 +71,6 @@
     saveHidden(); updateSourcesCount(); render();
   }));
 
-  // ---------- Secciones ----------
-  let view = "noticias";
-  const viewTabs = [...document.querySelectorAll(".views [data-view]")];
-  viewTabs.forEach((tab) => tab.addEventListener("click", () => {
-    view = tab.dataset.view;
-    viewTabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
-    document.querySelectorAll(".news-only").forEach((el) => { el.hidden = view !== "noticias"; });
-    bulosIntro.hidden = view !== "bulos";
-    q.placeholder = view === "bulos" ? "Buscar bulo o verificador…" : "Buscar noticia o medio…";
-    render();
-  }));
-
   // ---------- Noticias con versiones ----------
   const selected = new Map(); // índice de historia -> medio elegido
 
@@ -95,32 +78,33 @@
     const medio = selected.get(idx);
     const f = fuentes.find((x) => x.medio === medio) || fuentes[0];
     const others = h.num_medios - fuentes.length;
-    const related = h.bulos_relacionados || [];
+    const hoaxes = fuentes.filter((x) => x.bulo).length;
     return `
       <article class="story" data-idx="${idx}">
         <div class="badges">
           <span class="badge ${fuentes.length >= 3 ? "hot" : ""}">${fuentes.length} ${fuentes.length === 1 ? "versión" : "versiones"}</span>
           <span class="badge">${esc(fmt.format(new Date(h.fecha)))}</span>
           ${others > 0 ? `<span class="badge muted">+${others} en fuentes ocultas</span>` : ""}
+          ${hoaxes ? `<span class="badge danger">⚠ ${hoaxes === 1 ? "1 versión desmentida" : `${hoaxes} versiones desmentidas`}</span>` : ""}
         </div>
         ${fuentes.length > 1 ? `
         <div class="versions" role="tablist" aria-label="Versiones de la noticia">
           ${fuentes.map((x) => `<button type="button" role="tab" data-medio="${esc(x.medio)}"
-              aria-selected="${x === f}">${esc(x.medio)}</button>`).join("")}
+              aria-selected="${x === f}" ${x.bulo ? 'class="is-hoax" title="Desmentido por un verificador"' : ""}>${x.bulo ? "⚠ " : ""}${esc(x.medio)}</button>`).join("")}
         </div>` : ""}
-        <div class="version" role="tabpanel">
+        <div class="version ${f.bulo ? "is-hoax" : ""}" role="tabpanel">
+          ${f.bulo ? `
+          <div class="hoax-note">
+            <strong>⚠ Bulo: este titular ha sido desmentido</strong>
+            <p>Lo confirma <b>${esc(f.bulo.medio)}</b>:
+              <a href="${esc(safeUrl(f.bulo.enlace))}" target="_blank" rel="noopener noreferrer">${esc(f.bulo.titulo)}</a></p>
+          </div>` : ""}
           <p class="medio">${esc(f.medio)}<span class="lang">${esc(f.idioma)}</span>
             <span class="when">${esc(fmt.format(new Date(f.fecha)))}</span></p>
           <h2><a href="${esc(safeUrl(f.enlace))}" target="_blank" rel="noopener noreferrer">${esc(f.titulo)}</a></h2>
           ${f.extracto ? `<p class="extract">${esc(f.extracto)}</p>` : ""}
           <a class="read" href="${esc(safeUrl(f.enlace))}" target="_blank" rel="noopener noreferrer">Leer en ${esc(f.medio)} →</a>
         </div>
-        ${related.length ? `
-        <div class="hoax-note">
-          <strong>⚠ Bulo relacionado desmentido</strong>
-          <ul>${related.map((b) => `<li><a href="${esc(safeUrl(b.enlace))}" target="_blank" rel="noopener noreferrer">${esc(b.titulo)}</a>
-            <span class="by">— ${esc(b.medio)}</span></li>`).join("")}</ul>
-        </div>` : ""}
       </article>`;
   }
 
@@ -146,24 +130,9 @@
     return rows;
   }
 
-  function renderBulos(term) {
-    return bulos.filter((b) => visible(b.medio) &&
-      (!term || (b.medio + " " + b.titulo + " " + (b.extracto || "")).toLowerCase().includes(term)))
-      .map((b) => `
-        <article class="story hoax">
-          <div class="badges">
-            <span class="badge danger">Desmentido por ${esc(b.medio)}</span>
-            <span class="badge">${esc(fmt.format(new Date(b.fecha)))}</span>
-          </div>
-          <h2><a href="${esc(safeUrl(b.enlace))}" target="_blank" rel="noopener noreferrer">${esc(b.titulo)}</a></h2>
-          ${b.extracto ? `<p class="extract">${esc(b.extracto)}</p>` : ""}
-          <a class="read" href="${esc(safeUrl(b.enlace))}" target="_blank" rel="noopener noreferrer">Ver la verificación en ${esc(b.medio)} →</a>
-        </article>`);
-  }
-
   function render() {
     const term = q.value.trim().toLowerCase();
-    const rows = view === "bulos" ? renderBulos(term) : renderNews(term);
+    const rows = renderNews(term);
     empty.hidden = rows.length > 0;
     list.innerHTML = rows.join("");
   }
