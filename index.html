@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias Contrastadas</title>
+<meta name="description" content="La misma noticia, contada por distintos medios.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Noticias <span>contrastadas</span></h1>
+    <p class="sub">La misma noticia, contada por distintos medios. Compara titulares y lee cada versión en su fuente.</p>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Buscar noticia o medio…" aria-label="Buscar">
+      <label class="chk"><input id="multi" type="checkbox" checked> Solo noticias con 2+ medios</label>
+      <select id="lang" aria-label="Idioma">
+        <option value="">Todos los idiomas</option>
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+      </select>
+    </div>
+    <p id="updated" class="meta"></p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="list" aria-live="polite"></div>
+  <p id="empty" class="empty" hidden>No hay noticias que coincidan con el filtro.</p>
+</main>
+
+<footer class="wrap foot">
+  Solo se muestran titulares y enlaces. Todo el contenido pertenece a cada medio.
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

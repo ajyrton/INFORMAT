@@ -1,0 +1,98 @@
+{
+ "actualizado": "2026-10-19T21:57:13.838117+00:00",
+ "total_noticias": 8,
+ "historias": [
+  {
+   "titulo": "El Gobierno aprueba el decreto de vivienda con medidas contra los alquileres de temporada",
+   "fecha": "2026-10-19T21:57:07.521451+00:00",
+   "num_medios": 3,
+   "fuentes": [
+    {
+     "medio": "El País",
+     "idioma": "es",
+     "titulo": "El Gobierno aprueba el decreto de vivienda con medidas contra los alquileres de temporada",
+     "enlace": "https://example.com/elpaís89",
+     "extracto": "El Consejo de Ministros ha dado luz verde al paquete sobre vivienda y alquiler de temporada",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    },
+    {
+     "medio": "ABC",
+     "idioma": "es",
+     "titulo": "El Consejo de Ministros aprueba un decreto de vivienda que limita el alquiler de temporada",
+     "enlace": "https://example.com/abc54",
+     "extracto": "La norma busca frenar los alquileres turísticos en zonas tensionadas",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    },
+    {
+     "medio": "RTVE",
+     "idioma": "es",
+     "titulo": "Aprobado el decreto de vivienda: nuevas medidas sobre alquiler de temporada",
+     "enlace": "https://example.com/rtve109",
+     "extracto": "El Ejecutivo aprueba medidas de vivienda",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "Terremoto de magnitud 6,5 sacude la costa de Chile",
+   "fecha": "2026-10-19T21:57:07.521451+00:00",
+   "num_medios": 2,
+   "fuentes": [
+    {
+     "medio": "BBC Mundo",
+     "idioma": "es",
+     "titulo": "Terremoto de magnitud 6,5 sacude la costa de Chile",
+     "enlace": "https://example.com/bbcmundo398",
+     "extracto": "Las autoridades chilenas descartan alerta de tsunami tras el sismo",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    },
+    {
+     "medio": "DW Español",
+     "idioma": "es",
+     "titulo": "Un sismo de 6,5 sacude Chile sin alerta de tsunami",
+     "enlace": "https://example.com/dwespañol878",
+     "extracto": "El terremoto se sintió en varias regiones del país",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "Champions League: Real Madrid beat Inter in dramatic late win",
+   "fecha": "2026-10-19T21:57:07.521451+00:00",
+   "num_medios": 2,
+   "fuentes": [
+    {
+     "medio": "The Guardian",
+     "idioma": "en",
+     "titulo": "Champions League: Real Madrid beat Inter in dramatic late win",
+     "enlace": "https://example.com/theguardian549",
+     "extracto": "Real Madrid scored in the final minutes against Inter",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    },
+    {
+     "medio": "BBC News",
+     "idioma": "en",
+     "titulo": "Real Madrid edge Inter with late goal in Champions League",
+     "enlace": "https://example.com/bbcnews415",
+     "extracto": "A stoppage-time goal gave Real Madrid victory over Inter",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "La inflación se modera en septiembre según el INE",
+   "fecha": "2026-10-19T21:57:07.521451+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "El Mundo",
+     "idioma": "es",
+     "titulo": "La inflación se modera en septiembre según el INE",
+     "enlace": "https://example.com/elmundo603",
+     "extracto": "El IPC baja una décima en el noveno mes",
+     "fecha": "2026-10-19T21:57:07.521451+00:00"
+    }
+   ]
+  }
+ ]
+}

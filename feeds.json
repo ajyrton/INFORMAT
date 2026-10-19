@@ -1,0 +1,14 @@
+[
+  {"medio": "El País", "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada", "idioma": "es"},
+  {"medio": "El Mundo", "url": "https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml", "idioma": "es"},
+  {"medio": "ABC", "url": "https://www.abc.es/rss/2.0/portada/", "idioma": "es"},
+  {"medio": "La Vanguardia", "url": "https://www.lavanguardia.com/rss/home.xml", "idioma": "es"},
+  {"medio": "RTVE", "url": "https://www.rtve.es/api/noticias.rss", "idioma": "es"},
+  {"medio": "eldiario.es", "url": "https://www.eldiario.es/rss/", "idioma": "es"},
+  {"medio": "20minutos", "url": "https://www.20minutos.es/rss/", "idioma": "es"},
+  {"medio": "BBC Mundo", "url": "https://feeds.bbci.co.uk/mundo/rss.xml", "idioma": "es"},
+  {"medio": "DW Español", "url": "https://rss.dw.com/xml/rss-sp-all", "idioma": "es"},
+  {"medio": "The Guardian", "url": "https://www.theguardian.com/world/rss", "idioma": "en"},
+  {"medio": "BBC News", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "idioma": "en"},
+  {"medio": "Al Jazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml", "idioma": "en"}
+]
