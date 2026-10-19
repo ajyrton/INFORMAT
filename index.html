@@ -10,7 +10,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <h1>INFOR<span>MAT</span></h1>
+    <h1><a class="logo" href="./" title="Ir a la portada">INFORMA<span>T</span></a></h1>
     <p class="sub">La misma noticia, contada por distintos medios. Pulsa una noticia para comparar cómo la cuenta cada uno.</p>
 
     <div class="controls">
@@ -26,6 +26,10 @@
         </div>
       </div>
       <label class="chk"><input id="multi" type="checkbox" checked> Solo noticias con 2+ medios</label>
+      <select id="sort" aria-label="Ordenar">
+        <option value="recientes">Más recientes</option>
+        <option value="medios">Con más medios</option>
+      </select>
       <select id="lang" aria-label="Idioma">
         <option value="">Todos los idiomas</option>
         <option value="es">Español</option>

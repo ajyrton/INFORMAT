@@ -5,6 +5,7 @@
   const q = $("q");
   const multi = $("multi");
   const lang = $("lang");
+  const sort = $("sort");
   const updated = $("updated");
   const sourcesBtn = $("sources-btn");
   const sourcesPanel = $("sources-panel");
@@ -148,10 +149,15 @@
       if (onlyMulti && fuentes.length < 2) return;
       if (l && !fuentes.some((f) => f.idioma === l)) return;
       if (!matches(h, fuentes, term)) return;
-      rows.push(storyHtml(h, idx, fuentes));
+      rows.push({ h, idx, fuentes });
     });
+    // Orden: más recientes primero (por defecto) o las noticias que cuentan más medios
+    const byDate = (a, b) => b.h.fecha.localeCompare(a.h.fecha);
+    rows.sort(sort.value === "medios"
+      ? (a, b) => b.fuentes.length - a.fuentes.length || byDate(a, b)
+      : byDate);
     empty.hidden = rows.length > 0;
-    list.innerHTML = rows.join("");
+    list.innerHTML = rows.map((r) => storyHtml(r.h, r.idx, r.fuentes)).join("");
   }
 
   // ---------- Vista en columnas: una por medio ----------
@@ -208,7 +214,7 @@
     if (card) openDetail(Number(card.dataset.idx));
   });
 
-  [q, multi, lang].forEach((el) => el.addEventListener("input", render));
+  [q, multi, lang, sort].forEach((el) => el.addEventListener("input", render));
   updateSourcesCount();
   render();
 })();
