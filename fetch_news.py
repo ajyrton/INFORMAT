@@ -21,8 +21,12 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 from etiquetas import etiquetas
+from summarize import add_narratives
 
 ROOT = Path(__file__).parent
+# Orientación editorial de cada medio (ver sesgo_medios.json): 5 niveles -> 3 lados
+BUCKET = {"izquierda": "izquierda", "centro-izquierda": "izquierda", "centro": "centro",
+          "centro-derecha": "derecha", "derecha": "derecha"}
 MAX_AGE_HOURS = 48          # ignorar noticias más antiguas
 SIM_THRESHOLD = 0.30        # similitud mínima para agrupar (0-1)
 MAX_PER_FEED = 40
@@ -130,6 +134,23 @@ def fetch_items(feeds, max_age_hours=MAX_AGE_HOURS):
     return items
 
 
+def load_bias():
+    """medio -> etiqueta detallada (ej. 'centro-izquierda'). Sin archivo, nada se clasifica."""
+    path = ROOT / "sesgo_medios.json"
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {m: lab for m, lab in data.get("medios", {}).items() if lab in BUCKET}
+
+
+def tag_bias(items, bias):
+    """Añade 'sesgo' (izquierda/centro/derecha) y 'sesgo_detalle' a cada noticia clasificada."""
+    for it in items:
+        label = bias.get(it["medio"])
+        if label:
+            it["sesgo"], it["sesgo_detalle"] = BUCKET[label], label
+
+
 # ---------- Agrupación (TF-IDF + coseno, sin dependencias extra) ----------
 
 def build_vectors(items):
@@ -215,7 +236,7 @@ def neutral_index(idxs, items, vecs, flagged):
 
 
 def build_output(items, groups, vecs, flagged=None):
-    fields = ("medio", "idioma", "titulo", "enlace", "extracto", "fecha", "imagen")
+    fields = ("medio", "idioma", "titulo", "enlace", "extracto", "fecha", "imagen", "sesgo", "sesgo_detalle")
     flagged = flagged or {}
     out = []
     for g in groups:
@@ -262,6 +283,7 @@ def main():
         print("No se obtuvieron noticias; no se sobrescribe news.json", file=sys.stderr)
         sys.exit(1)
 
+    tag_bias(items, load_bias())
     hoaxes = sorted((c for c in checks if is_hoax_debunk(c)), key=lambda x: x["fecha"], reverse=True)
     # vectores comunes para que noticias y bulos compartan el mismo IDF
     vecs = build_vectors(items + hoaxes)
@@ -269,6 +291,7 @@ def main():
     groups = cluster(items, news_vecs)
     flagged = flag_hoaxes(items, news_vecs, hoaxes, hoax_vecs)
     historias = build_output(items, groups, news_vecs, flagged)
+    add_narratives(historias, ROOT)  # opcional: solo con LLM_API_* configuradas
     result = {
         "actualizado": datetime.now(timezone.utc).isoformat(),
         "total_noticias": len(items),

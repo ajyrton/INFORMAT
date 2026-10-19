@@ -101,6 +101,32 @@
     return { titulo: fuentes[0].titulo, medio: fuentes[0].medio };
   }
 
+  // ---------- Narrativa por lado (izquierda / derecha) ----------
+  const SB_NAME = { izquierda: "Izquierda", centro: "Centro", derecha: "Derecha" };
+
+  // Cómo lo cuenta cada lado: resumen con IA si existe y todos sus medios están visibles;
+  // si no, el titular más reciente de ese lado (las fuentes vienen ordenadas por fecha).
+  function narrativeHtml(h, fuentes) {
+    if (!fuentes.some((f) => f.sesgo === "izquierda" || f.sesgo === "derecha")) return "";
+    const ai = h.narrativa && h.narrativa.modo === "ia" ? h.narrativa : null;
+    let usedAi = false;
+    const col = (k) => {
+      const mine = fuentes.filter((f) => f.sesgo === k);
+      if (!mine.length) {
+        return `<div class="sb-col ${k}"><h3>${SB_NAME[k]}</h3><p class="sb-none">Sin cobertura en las fuentes mostradas.</p></div>`;
+      }
+      const d = ai && ai[k] && ai[k].medios.every(visible) ? ai[k] : null;
+      if (d) usedAi = true;
+      return `<div class="sb-col ${k}"><h3>${SB_NAME[k]}</h3>
+        <p>${d ? esc(d.texto) : `«${esc(mine[0].titulo)}»`}</p>
+        <p class="sb-by">${esc((d ? d.medios : mine.map((f) => f.medio)).join(", "))}</p></div>`;
+    };
+    const cols = col("izquierda") + col("derecha");
+    return `<div class="sb-narr"><div class="sb-cols">${cols}</div>
+      <p class="sb-note">${usedAi ? "Resumen generado por IA a partir de titulares y extractos; puede contener errores."
+        : "Titular más reciente de cada lado."}</p></div>`;
+  }
+
   function storyHtml(h, idx, fuentes) {
     const t = headline(h, fuentes);
     const others = h.num_medios - fuentes.length;
@@ -167,7 +193,7 @@
     const link = esc(safeUrl(f.enlace));
     return `
       <section class="col ${f.bulo ? "is-hoax" : ""}">
-        <header class="col-head">${f.bulo ? "⚠ " : ""}${esc(f.medio)}<span class="lang">${esc(f.idioma)}</span></header>
+        <header class="col-head">${f.bulo ? "⚠ " : ""}${esc(f.medio)}<span class="lang">${esc(f.idioma)}</span>${f.sesgo ? `<span class="sb-chip ${f.sesgo}">${esc(f.sesgo_detalle || f.sesgo)}</span>` : ""}</header>
         ${img(f.imagen, "col-img")}
         ${f.bulo ? `
         <div class="hoax-note">
@@ -186,6 +212,7 @@
     const h = data.historias[idx];
     const fuentes = visibleFuentes(h);
     const t = headline(h, fuentes);
+    const sbExtra = narrativeHtml(h, fuentes);
     detail.innerHTML = `
       <div class="detail-head">
         <div>
@@ -195,8 +222,12 @@
         </div>
         <button type="button" class="close" aria-label="Cerrar">✕</button>
       </div>
+      ${sbExtra ? `<div class="sb-detail">${sbExtra}</div>` : ""}
       <div class="columns" style="--n:${fuentes.length}">${fuentes.map(columnHtml).join("")}</div>`;
     detail.showModal();
+    // abrir siempre arriba del todo (el foco automático puede desplazar el panel)
+    detail.querySelector(".close").focus({ preventScroll: true });
+    detail.scrollTop = 0;
     detail.querySelector(".columns").scrollLeft = 0;
   }
 

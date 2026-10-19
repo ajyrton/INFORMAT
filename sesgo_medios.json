@@ -1,0 +1,22 @@
+{
+  "aviso": "Clasificación PROVISIONAL y discutible, hecha como punto de partida editorial. No es una medición científica. Cámbiala libremente y, cuando tengas una fuente que la respalde (estudio, índice, metodología propia), anótala en 'fuente'. Los medios que no aparecen aquí se muestran como 'sin clasificar' y no cuentan en los porcentajes.",
+  "fuente": "Criterio editorial provisional del proyecto (pendiente de documentar con una metodología pública).",
+  "escala": ["izquierda", "centro-izquierda", "centro", "centro-derecha", "derecha"],
+  "medios": {
+    "eldiario.es": "izquierda",
+    "Público": "izquierda",
+    "infoLibre": "izquierda",
+    "El País": "centro-izquierda",
+    "RTVE": "centro",
+    "20minutos": "centro",
+    "La Vanguardia": "centro",
+    "El Confidencial": "centro",
+    "El Mundo": "centro-derecha",
+    "El Español": "centro-derecha",
+    "The Objective": "centro-derecha",
+    "Vozpópuli": "centro-derecha",
+    "ABC": "derecha",
+    "La Razón": "derecha",
+    "OKDiario": "derecha"
+  }
+}
