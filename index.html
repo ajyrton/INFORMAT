@@ -11,10 +11,10 @@
 <header class="top">
   <div class="wrap">
     <h1>INFOR<span>MAT</span></h1>
-    <p class="sub">La misma noticia, contada por distintos medios. Cambia entre versiones y lee cada una en su fuente.</p>
+    <p class="sub">La misma noticia, contada por distintos medios. Pulsa una noticia para comparar cómo la cuenta cada uno.</p>
 
     <div class="controls">
-      <input id="q" type="search" placeholder="Buscar noticia o medio…" aria-label="Buscar">
+      <input id="q" type="search" placeholder="Buscar noticia, medio o #tema…" aria-label="Buscar">
       <div class="filter">
         <button id="sources-btn" type="button" aria-expanded="false" aria-controls="sources-panel">Fuentes <span id="sources-count" class="count"></span></button>
         <div id="sources-panel" class="panel" hidden>
@@ -32,6 +32,7 @@
         <option value="en">Inglés</option>
       </select>
     </div>
+    <button id="tag-filter" type="button" class="tag-filter" hidden>Filtrando por <span></span> <b aria-hidden="true">✕</b><span class="sr">Quitar filtro</span></button>
     <p id="updated" class="meta"></p>
   </div>
 </header>
@@ -42,9 +43,11 @@
 </main>
 
 <footer class="wrap foot">
-  Solo se muestran titulares y enlaces. Todo el contenido pertenece a cada medio.<br>
+  Solo se muestran titulares, extractos, imágenes de portada y enlaces. Todo el contenido pertenece a cada medio.<br>
   Los titulares marcados como bulo coinciden con un desmentido de Maldita.es, Newtral, EFE Verifica o Verificat.
 </footer>
+
+<dialog id="detail" class="detail" aria-label="Versiones de la noticia"></dialog>
 
 <script src="app.js"></script>
 </body>

@@ -20,6 +20,8 @@ from collections import Counter
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from etiquetas import etiquetas
+
 ROOT = Path(__file__).parent
 MAX_AGE_HOURS = 48          # ignorar noticias más antiguas
 SIM_THRESHOLD = 0.30        # similitud mínima para agrupar (0-1)
@@ -75,6 +77,26 @@ def parse_date(entry):
     return None
 
 
+def find_image(entry):
+    """URL de la imagen que el medio publica en su feed (la de mayor anchura), o None."""
+    best, best_w = None, -1
+    for key in ("media_content", "media_thumbnail"):
+        for m in entry.get(key, []) or []:
+            url, kind = m.get("url", ""), str(m.get("type", "") or m.get("medium", "image"))
+            if url.startswith("https://") and ("image" in kind or key == "media_thumbnail"):
+                w = int(m.get("width") or 0)
+                if w > best_w:
+                    best, best_w = url, w
+    if best:
+        return best
+    for link in entry.get("links", []):
+        if link.get("rel") == "enclosure" and str(link.get("type", "")).startswith("image") \
+                and link.get("href", "").startswith("https://"):
+            return link["href"]
+    m = re.search(r'<img[^>]+src="(https://[^"]+)"', entry.get("summary", ""))
+    return html.unescape(m.group(1)) if m else None
+
+
 def fetch_items(feeds, max_age_hours=MAX_AGE_HOURS):
     import feedparser  # pip install feedparser (solo hace falta al descargar feeds)
 
@@ -100,6 +122,8 @@ def fetch_items(feeds, max_age_hours=MAX_AGE_HOURS):
                 "titulo": title, "enlace": link,
                 "extracto": clean_snippet(e.get("summary", "")),
                 "fecha": date.isoformat(),
+                "imagen": find_image(e),
+                "categorias": [t["term"] for t in e.get("tags", []) if t.get("term")][:8],
             })
             n += 1
         print(f"[ok] {f['medio']}: {n} noticias", file=sys.stderr)
@@ -174,24 +198,47 @@ def flag_hoaxes(items, vecs, hoaxes, hoax_vecs):
     return flagged
 
 
-def build_output(items, groups, flagged=None):
-    fields = ("medio", "idioma", "titulo", "enlace", "extracto", "fecha")
+# Rasgos de un titular poco neutro: exclamaciones, preguntas y declaraciones entrecomilladas
+LOADED_RE = re.compile(r"[!¡?¿]|[«»\"“”]")
+
+
+def neutral_index(idxs, items, vecs, flagged):
+    """Elige el titular más representativo del grupo: el que más se parece a los demás,
+    en español si lo hay, sin bulos y penalizando signos de sensacionalismo."""
+    def score(i):
+        others = [j for j in idxs if j != i]
+        sim = sum(cosine(vecs[i], vecs[j]) for j in others) / len(others) if others else 0.0
+        if LOADED_RE.search(items[i]["titulo"]):
+            sim -= 0.15
+        return (i not in flagged, items[i]["idioma"] == "es", sim)
+    return max(idxs, key=score)
+
+
+def build_output(items, groups, vecs, flagged=None):
+    fields = ("medio", "idioma", "titulo", "enlace", "extracto", "fecha", "imagen")
     flagged = flagged or {}
     out = []
     for g in groups:
         idxs = sorted(g["members"], key=lambda i: items[i]["fecha"], reverse=True)
+        neutral = neutral_index(idxs, items, vecs, flagged)
         fuentes = []
         for i in idxs:
-            f = {k: items[i][k] for k in fields}
+            f = {k: items[i][k] for k in fields if items[i].get(k)}
             if i in flagged:
                 f["bulo"] = flagged[i]
             fuentes.append(f)
-        out.append({
-            "titulo": fuentes[0]["titulo"],
+        story = {
+            "titulo": items[neutral]["titulo"],
+            "titulo_medio": items[neutral]["medio"],
             "fecha": max(f["fecha"] for f in fuentes),
             "num_medios": len({f["medio"] for f in fuentes}),
+            "imagen": items[neutral].get("imagen") or next((f["imagen"] for f in fuentes if f.get("imagen")), None),
+            **etiquetas([items[i] for i in idxs]),
             "fuentes": fuentes,
-        })
+        }
+        if not story["imagen"]:
+            del story["imagen"]
+        out.append(story)
     # primero las más cubiertas, luego las más recientes
     out.sort(key=lambda x: (x["num_medios"], x["fecha"]), reverse=True)
     return out
@@ -221,7 +268,7 @@ def main():
     news_vecs, hoax_vecs = vecs[:len(items)], vecs[len(items):]
     groups = cluster(items, news_vecs)
     flagged = flag_hoaxes(items, news_vecs, hoaxes, hoax_vecs)
-    historias = build_output(items, groups, flagged)
+    historias = build_output(items, groups, news_vecs, flagged)
     result = {
         "actualizado": datetime.now(timezone.utc).isoformat(),
         "total_noticias": len(items),

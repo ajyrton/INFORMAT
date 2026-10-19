@@ -71,48 +71,74 @@
     saveHidden(); updateSourcesCount(); render();
   }));
 
-  // ---------- Noticias con versiones ----------
-  const selected = new Map(); // índice de historia -> medio elegido
+  // ---------- Etiquetas (#) ----------
+  let activeTag = "";
+  const tagFilter = $("tag-filter");
+  const tagsOf = (h) => [...(h.temas || []), ...(h.lugares || [])];
+  const tagsHtml = (h) => {
+    const tags = tagsOf(h);
+    return tags.length ? `<div class="tags">${tags.map((t) =>
+      `<button type="button" class="tag" data-tag="${esc(t)}">#${esc(t)}</button>`).join("")}</div>` : "";
+  };
+  function setTag(tag) {
+    activeTag = tag;
+    tagFilter.hidden = !tag;
+    tagFilter.querySelector("span").textContent = "#" + tag;
+    render();
+  }
+  tagFilter.addEventListener("click", () => setTag(""));
+
+  // ---------- Tarjetas ----------
+  const visibleFuentes = (h) => h.fuentes.filter((f) => visible(f.medio));
+  const img = (url, cls) => url
+    ? `<img class="${cls}" src="${esc(safeUrl(url))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`
+    : "";
+
+  // Titular neutro: el elegido por el script, salvo que su medio esté oculto
+  function headline(h, fuentes) {
+    if (visible(h.titulo_medio || "")) return { titulo: h.titulo, medio: h.titulo_medio };
+    return { titulo: fuentes[0].titulo, medio: fuentes[0].medio };
+  }
 
   function storyHtml(h, idx, fuentes) {
-    const medio = selected.get(idx);
-    const f = fuentes.find((x) => x.medio === medio) || fuentes[0];
+    const t = headline(h, fuentes);
     const others = h.num_medios - fuentes.length;
     const hoaxes = fuentes.filter((x) => x.bulo).length;
+    const image = (fuentes.find((x) => x.medio === t.medio) || {}).imagen || h.imagen ||
+      (fuentes.find((x) => x.imagen) || {}).imagen;
+    const names = fuentes.slice(0, 4).map((x) => esc(x.medio)).join(" · ") +
+      (fuentes.length > 4 ? ` · +${fuentes.length - 4}` : "");
     return `
-      <article class="story" data-idx="${idx}">
-        <div class="badges">
-          <span class="badge ${fuentes.length >= 3 ? "hot" : ""}">${fuentes.length} ${fuentes.length === 1 ? "versión" : "versiones"}</span>
-          <span class="badge">${esc(fmt.format(new Date(h.fecha)))}</span>
-          ${others > 0 ? `<span class="badge muted">+${others} en fuentes ocultas</span>` : ""}
-          ${hoaxes ? `<span class="badge danger">⚠ ${hoaxes === 1 ? "1 versión desmentida" : `${hoaxes} versiones desmentidas`}</span>` : ""}
-        </div>
-        ${fuentes.length > 1 ? `
-        <div class="versions" role="tablist" aria-label="Versiones de la noticia">
-          ${fuentes.map((x) => `<button type="button" role="tab" data-medio="${esc(x.medio)}"
-              aria-selected="${x === f}" ${x.bulo ? 'class="is-hoax" title="Desmentido por un verificador"' : ""}>${x.bulo ? "⚠ " : ""}${esc(x.medio)}</button>`).join("")}
-        </div>` : ""}
-        <div class="version ${f.bulo ? "is-hoax" : ""}" role="tabpanel">
-          ${f.bulo ? `
-          <div class="hoax-note">
-            <strong>⚠ Bulo: este titular ha sido desmentido</strong>
-            <p>Lo confirma <b>${esc(f.bulo.medio)}</b>:
-              <a href="${esc(safeUrl(f.bulo.enlace))}" target="_blank" rel="noopener noreferrer">${esc(f.bulo.titulo)}</a></p>
-          </div>` : ""}
-          <p class="medio">${esc(f.medio)}<span class="lang">${esc(f.idioma)}</span>
-            <span class="when">${esc(fmt.format(new Date(f.fecha)))}</span></p>
-          <h2><a href="${esc(safeUrl(f.enlace))}" target="_blank" rel="noopener noreferrer">${esc(f.titulo)}</a></h2>
-          ${f.extracto ? `<p class="extract">${esc(f.extracto)}</p>` : ""}
-          <a class="read" href="${esc(safeUrl(f.enlace))}" target="_blank" rel="noopener noreferrer">Leer en ${esc(f.medio)} →</a>
+      <article class="story ${image ? "has-img" : ""}" data-idx="${idx}">
+        ${img(image, "thumb")}
+        <div class="story-body">
+          <div class="badges">
+            <span class="badge ${fuentes.length >= 3 ? "hot" : ""}">${fuentes.length} ${fuentes.length === 1 ? "medio" : "medios"}</span>
+            <span class="badge">${esc(fmt.format(new Date(h.fecha)))}</span>
+            ${others > 0 ? `<span class="badge muted">+${others} en fuentes ocultas</span>` : ""}
+            ${hoaxes ? `<span class="badge danger">⚠ ${hoaxes === 1 ? "1 versión desmentida" : `${hoaxes} versiones desmentidas`}</span>` : ""}
+          </div>
+          <h2><button type="button" class="open">«${esc(t.titulo)}»</button></h2>
+          <p class="attrib">Titular de ${esc(t.medio)}</p>
+          ${tagsHtml(h)}
+          <div class="story-foot">
+            <span class="names">${names}</span>
+            <button type="button" class="open compare">${fuentes.length > 1 ? `Comparar ${fuentes.length} versiones` : "Ver la noticia"} →</button>
+          </div>
         </div>
       </article>`;
   }
 
-  function visibleFuentes(h) {
-    return h.fuentes.filter((f) => visible(f.medio));
+  function matches(h, fuentes, term) {
+    if (activeTag && !tagsOf(h).includes(activeTag)) return false;
+    if (!term) return true;
+    const hay = (fuentes.map((f) => f.medio + " " + f.titulo).join(" ") + " " +
+      tagsOf(h).map((t) => "#" + t).join(" ")).toLowerCase();
+    return hay.includes(term);
   }
 
-  function renderNews(term) {
+  function render() {
+    const term = q.value.trim().toLowerCase();
     const onlyMulti = multi.checked;
     const l = lang.value;
     const rows = [];
@@ -121,44 +147,65 @@
       if (!fuentes.length) return;
       if (onlyMulti && fuentes.length < 2) return;
       if (l && !fuentes.some((f) => f.idioma === l)) return;
-      if (term) {
-        const hay = fuentes.map((f) => f.medio + " " + f.titulo).join(" ").toLowerCase();
-        if (!hay.includes(term)) return;
-      }
+      if (!matches(h, fuentes, term)) return;
       rows.push(storyHtml(h, idx, fuentes));
     });
-    return rows;
-  }
-
-  function render() {
-    const term = q.value.trim().toLowerCase();
-    const rows = renderNews(term);
     empty.hidden = rows.length > 0;
     list.innerHTML = rows.join("");
   }
 
-  // Cambiar de versión sin repintar toda la lista
-  list.addEventListener("click", (e) => {
-    const btn = e.target.closest(".versions [data-medio]");
-    if (!btn) return;
-    const card = btn.closest(".story");
-    const idx = Number(card.dataset.idx);
-    selected.set(idx, btn.dataset.medio);
-    const tmp = document.createElement("div");
-    tmp.innerHTML = storyHtml(data.historias[idx], idx, visibleFuentes(data.historias[idx]));
-    const fresh = tmp.firstElementChild;
-    card.replaceWith(fresh);
-    fresh.querySelector(`.versions [data-medio="${CSS.escape(btn.dataset.medio)}"]`).focus();
+  // ---------- Vista en columnas: una por medio ----------
+  const detail = $("detail");
+
+  function columnHtml(f) {
+    const link = esc(safeUrl(f.enlace));
+    return `
+      <section class="col ${f.bulo ? "is-hoax" : ""}">
+        <header class="col-head">${f.bulo ? "⚠ " : ""}${esc(f.medio)}<span class="lang">${esc(f.idioma)}</span></header>
+        ${img(f.imagen, "col-img")}
+        ${f.bulo ? `
+        <div class="hoax-note">
+          <strong>⚠ Bulo: este titular ha sido desmentido</strong>
+          <p>Lo confirma <b>${esc(f.bulo.medio)}</b>:
+            <a href="${esc(safeUrl(f.bulo.enlace))}" target="_blank" rel="noopener noreferrer">${esc(f.bulo.titulo)}</a></p>
+        </div>` : ""}
+        <h3><a href="${link}" target="_blank" rel="noopener noreferrer">${esc(f.titulo)}</a></h3>
+        <p class="when">${esc(fmt.format(new Date(f.fecha)))}</p>
+        ${f.extracto ? `<p class="extract">${esc(f.extracto)}</p>` : ""}
+        <a class="read" href="${link}" target="_blank" rel="noopener noreferrer">Leer en ${esc(f.medio)} →</a>
+      </section>`;
+  }
+
+  function openDetail(idx) {
+    const h = data.historias[idx];
+    const fuentes = visibleFuentes(h);
+    const t = headline(h, fuentes);
+    detail.innerHTML = `
+      <div class="detail-head">
+        <div>
+          <h2>«${esc(t.titulo)}»</h2>
+          <p class="attrib">Titular de ${esc(t.medio)} · ${fuentes.length} ${fuentes.length === 1 ? "versión" : "versiones"}</p>
+          ${tagsHtml(h)}
+        </div>
+        <button type="button" class="close" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="columns" style="--n:${fuentes.length}">${fuentes.map(columnHtml).join("")}</div>`;
+    detail.showModal();
+    detail.querySelector(".columns").scrollLeft = 0;
+  }
+
+  detail.addEventListener("click", (e) => {
+    if (e.target === detail || e.target.closest(".close")) { detail.close(); return; }
+    const tag = e.target.closest(".tag");
+    if (tag) { detail.close(); setTag(tag.dataset.tag); }
   });
-  // Flechas izquierda/derecha para moverse entre versiones
-  list.addEventListener("keydown", (e) => {
-    if (!["ArrowLeft", "ArrowRight"].includes(e.key)) return;
-    const btn = e.target.closest(".versions [data-medio]");
-    if (!btn) return;
-    const tabs = [...btn.parentElement.children];
-    const next = tabs[(tabs.indexOf(btn) + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
-    next.click();
-    e.preventDefault();
+
+  list.addEventListener("click", (e) => {
+    const tag = e.target.closest(".tag");
+    if (tag) { setTag(tag.dataset.tag); return; }
+    if (e.target.closest("a")) return;
+    const card = e.target.closest(".story");
+    if (card) openDetail(Number(card.dataset.idx));
   });
 
   [q, multi, lang].forEach((el) => el.addEventListener("input", render));
