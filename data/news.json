@@ -1,6 +1,6 @@
 {
- "actualizado": "2026-10-19T22:06:41.925359+00:00",
- "total_noticias": 313,
+ "actualizado": "2026-10-19T22:16:11.865438+00:00",
+ "total_noticias": 312,
  "historias": [
   {
    "titulo": "Renuncia toda la lista del PSOE de Palencia al Congreso al cambiar Ferraz al número uno",
@@ -170,6 +170,37 @@
      "enlace": "https://www.lavanguardia.com/internacional/20261019/11662471/macron-rechaza-dimision-ministro-interior-fiasco-disturbios.html",
      "extracto": "Macron rechaza la dimisión del ministro del Interior, quien reconoce su responsabilidad por no anticipar la gravedad de los alborotos, con 3.000 tiendas saqueadas",
      "fecha": "2026-10-19T09:16:19+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "Los Mossos impiden la entrada de Vito Quiles a la UAB y la manifestación en su contra termina con tensión y cargas",
+   "fecha": "2026-10-19T18:39:16+00:00",
+   "num_medios": 3,
+   "fuentes": [
+    {
+     "medio": "El Mundo",
+     "idioma": "es",
+     "titulo": "Los Mossos impiden la entrada de Vito Quiles a la UAB y la manifestación en su contra termina con tensión y cargas",
+     "enlace": "https://www.elmundo.es/cataluna/2026/10/19/6ad6497de4d4d8a71f8b458c.html",
+     "extracto": "Quiles ha convocado a los suyos en un Ikea cercano, donde un grupo le ha increpado sin que se hayan producido incidentes. Los agentes han blindado el campus después de que la universidad le…",
+     "fecha": "2026-10-19T18:39:16+00:00"
+    },
+    {
+     "medio": "El País",
+     "idioma": "es",
+     "titulo": "Vito Quiles fracasa en su intento de acceder a la UAB por el blindaje de los Mossos y acaba en un Ikea",
+     "enlace": "https://elpais.com/espana/catalunya/2026-10-19/vito-quiles-fracasa-en-su-intento-de-acceder-a-la-uab-por-el-blindaje-de-los-mossos-y-acaba-en-un-ikea.html",
+     "extracto": "Grupos de jóvenes que se manifestaban contra el agitador ‘ultra’ acaban enfrentándose a la policía",
+     "fecha": "2026-10-19T17:22:04+00:00"
+    },
+    {
+     "medio": "eldiario.es",
+     "idioma": "es",
+     "titulo": "Cargas contra estudiantes en la protesta contra Vito Quiles en la Autònoma de Barcelona",
+     "enlace": "https://www.eldiario.es/catalunya/mossos-realizan-controles-acceso-autonoma-barcelona-evitar-entrada-vito-quiles-campus_1_13598041.html",
+     "extracto": "Un dispositivo de los Mossos impide al agitador ultra llegar a la universidad, que le había denegado el acceso para evitar altercados La Autónoma de Barcelona pide a los Mossos que eviten que Vito…",
+     "fecha": "2026-10-19T15:48:50+00:00"
     }
    ]
   },
@@ -398,29 +429,6 @@
    ]
   },
   {
-   "titulo": "Trump se muestra dispuesto a una trilateral con Putin y Xi en China",
-   "fecha": "2026-10-19T20:11:23+00:00",
-   "num_medios": 2,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Trump se muestra dispuesto a una trilateral con Putin y Xi en China",
-     "enlace": "https://www.abc.es/internacional/trump-muestra-dispuesto-trilateral-putin-china-20261018221056-nt.html",
-     "extracto": "Donald Trump se ha mostrado este lunes dispuesto a reunirse con Vladímir Putin y Xi Jinping en China el próximo mes de noviembre, en una cumbre trilateral propuesta por Rusia que podría abordar tanto…",
-     "fecha": "2026-10-19T20:11:23+00:00"
-    },
-    {
-     "medio": "El Mundo",
-     "idioma": "es",
-     "titulo": "Trump se muestra dispuesto a reunirse con Putin y Xi para poner fin a la guerra de Ucrania y cuestiona a Zelenski como negociador",
-     "enlace": "https://www.elmundo.es/internacional/2026/10/19/6ad6745efc6c83a26e8b457f.html",
-     "extracto": "El líder estadounidense ha sugerido que el presidente ucraniano, Volodimir Zelenski, debería delegar en otra persona la negociación con Moscú Leer",
-     "fecha": "2026-10-19T19:53:30+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Meloni despliega el Ejército para defender Milán de las protestas",
    "fecha": "2026-10-19T19:32:12+00:00",
    "num_medios": 2,
@@ -513,6 +521,29 @@
    ]
   },
   {
+   "titulo": "Huelga educativa sin educación",
+   "fecha": "2026-10-19T19:05:18+00:00",
+   "num_medios": 2,
+   "fuentes": [
+    {
+     "medio": "ABC",
+     "idioma": "es",
+     "titulo": "Huelga educativa sin educación",
+     "enlace": "https://www.abc.es/espana/huelga-educativa-educacion-20261019210041-nt.html",
+     "extracto": "",
+     "fecha": "2026-10-19T19:05:18+00:00"
+    },
+    {
+     "medio": "El País",
+     "idioma": "es",
+     "titulo": "Un grupo de 200 profesores corta la autovía A-3 en el inicio del cuarto día de huelga educativa de Madrid",
+     "enlace": "https://elpais.com/espana/madrid/2026-10-19/un-grupo-de-200-profesores-corta-la-autovia-a-3-en-el-inicio-del-cuarto-dia-de-huelga-educativa-de-madrid.html",
+     "extracto": "Los docentes han realizado una acción en señal de protesta en Moratalaz, a la altura de Plaza Conde de Covatillas",
+     "fecha": "2026-10-19T08:17:57+00:00"
+    }
+   ]
+  },
+  {
    "titulo": "Elon Musk promete regalar una acción de SpaceX a cada niño en EE. UU.: «Será la primera de muchas»",
    "fecha": "2026-10-19T18:51:13+00:00",
    "num_medios": 2,
@@ -555,29 +586,6 @@
      "enlace": "https://elpais.com/us/2026-10-19/christiane-amanpour-anuncia-que-deja-la-cnn-despues-de-43-anos-como-referencia-del-periodismo-internacional.html",
      "extracto": "La decisión se produce unas semanas después de que Paramount Skydance, de la familia Ellison, cerrara la compra de Warner Bros., propietaria de la popular cadena de noticias",
      "fecha": "2026-10-19T17:39:46+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Los Mossos impiden la entrada de Vito Quiles a la UAB y la manifestación en su contra termina con tensión y cargas",
-   "fecha": "2026-10-19T18:39:16+00:00",
-   "num_medios": 2,
-   "fuentes": [
-    {
-     "medio": "El Mundo",
-     "idioma": "es",
-     "titulo": "Los Mossos impiden la entrada de Vito Quiles a la UAB y la manifestación en su contra termina con tensión y cargas",
-     "enlace": "https://www.elmundo.es/cataluna/2026/10/19/6ad6497de4d4d8a71f8b458c.html",
-     "extracto": "Quiles ha convocado a los suyos en un Ikea cercano, donde un grupo le ha increpado sin que se hayan producido incidentes. Los agentes han blindado el campus después de que la universidad le…",
-     "fecha": "2026-10-19T18:39:16+00:00"
-    },
-    {
-     "medio": "El País",
-     "idioma": "es",
-     "titulo": "Vito Quiles fracasa en su intento de acceder a la UAB por el blindaje de los Mossos y acaba en un Ikea",
-     "enlace": "https://elpais.com/espana/catalunya/2026-10-19/vito-quiles-fracasa-en-su-intento-de-acceder-a-la-uab-por-el-blindaje-de-los-mossos-y-acaba-en-un-ikea.html",
-     "extracto": "Grupos de jóvenes que se manifestaban contra el agitador ‘ultra’ acaban enfrentándose a la policía",
-     "fecha": "2026-10-19T17:22:04+00:00"
     }
    ]
   },
@@ -831,29 +839,6 @@
      "enlace": "https://www.theguardian.com/world/2026/oct/19/alberta-goes-to-polls-in-referendum-divisions-separatists-canada",
      "extracto": "Voters to be asked whether province should remain part of Canada or hold a second, binding independence vote Albertans are going to the polls to decide their place in Canada, in a referendum that has…",
      "fecha": "2026-10-19T05:00:22+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Cuentas ultras vinculan falsamente a dos jóvenes con el asesinato de una mujer de 83 años en Burgos: \"Cuando me enteré, me dio un ataque de ansiedad\"",
-   "fecha": "2026-10-19T13:06:19+00:00",
-   "num_medios": 2,
-   "fuentes": [
-    {
-     "medio": "eldiario.es",
-     "idioma": "es",
-     "titulo": "Cuentas ultras vinculan falsamente a dos jóvenes con el asesinato de una mujer de 83 años en Burgos: \"Cuando me enteré, me dio un ataque de ansiedad\"",
-     "enlace": "https://www.eldiario.es/politica/cuentas-ultras-vinculan-falsamente-jovenes-asesinato-mujer-83-anos-burgos-han-destrozado-vida_1_13597186.html",
-     "extracto": "elDiario.es ha hablado con Ahmed, de 20 años, y Youssef, de 29, los dos jóvenes afectados por la mentira: \"Me ha tocado a mí como le podía haber tocado a cualquier otra persona racializada\" Detenidos…",
-     "fecha": "2026-10-19T13:06:19+00:00"
-    },
-    {
-     "medio": "El País",
-     "idioma": "es",
-     "titulo": "Los jóvenes acusados falsamente de matar a una mujer en Burgos por cuentas de extrema derecha: “Nos han destrozado la vida”",
-     "enlace": "https://elpais.com/espana/2026-10-19/los-jovenes-acusados-falsamente-de-matar-a-una-mujer-en-burgos-por-cuentas-de-extrema-derecha-nos-han-destrozado-la-vida.html",
-     "extracto": "Dos españoles, de 20 y 29 años, que no se conocen de nada, se ven envueltos por un bulo en un caso de asesinato tras la difusión de sus fotografías el pasado sábado",
-     "fecha": "2026-10-19T11:38:32+00:00"
     }
    ]
   },
@@ -1506,6 +1491,21 @@
    ]
   },
   {
+   "titulo": "Trump se muestra dispuesto a una trilateral con Putin y Xi en China",
+   "fecha": "2026-10-19T20:11:23+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "ABC",
+     "idioma": "es",
+     "titulo": "Trump se muestra dispuesto a una trilateral con Putin y Xi en China",
+     "enlace": "https://www.abc.es/internacional/trump-muestra-dispuesto-trilateral-putin-china-20261018221056-nt.html",
+     "extracto": "Donald Trump se ha mostrado este lunes dispuesto a reunirse con Vladímir Putin y Xi Jinping en China el próximo mes de noviembre, en una cumbre trilateral propuesta por Rusia que podría abordar tanto…",
+     "fecha": "2026-10-19T20:11:23+00:00"
+    }
+   ]
+  },
+  {
    "titulo": "La web electoral de Irene Montero: ni rastro de Podemos y solo con su cara y su nombre",
    "fecha": "2026-10-19T20:02:30+00:00",
    "num_medios": 1,
@@ -1532,6 +1532,21 @@
      "enlace": "https://www.aljazeera.com/news/2026/10/19/finland-seeking-one-million-land-mines-as-it-eyes-russian-threat?traffic_source=rss",
      "extracto": "Helsinki recently joined regional peers in withdrawing from UN Charter banning munitions as it eyes its eastern border.",
      "fecha": "2026-10-19T19:57:10+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "Trump se muestra dispuesto a reunirse con Putin y Xi para poner fin a la guerra de Ucrania y cuestiona a Zelenski como negociador",
+   "fecha": "2026-10-19T19:53:30+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "El Mundo",
+     "idioma": "es",
+     "titulo": "Trump se muestra dispuesto a reunirse con Putin y Xi para poner fin a la guerra de Ucrania y cuestiona a Zelenski como negociador",
+     "enlace": "https://www.elmundo.es/internacional/2026/10/19/6ad6745efc6c83a26e8b457f.html",
+     "extracto": "El líder estadounidense ha sugerido que el presidente ucraniano, Volodimir Zelenski, debería delegar en otra persona la negociación con Moscú Leer",
+     "fecha": "2026-10-19T19:53:30+00:00"
     }
    ]
   },
@@ -1697,21 +1712,6 @@
      "enlace": "https://www.aljazeera.com/news/2026/10/19/indian-court-extends-detention-of-cockroach-leaders?traffic_source=rss",
      "extracto": "The extension of the custody of the CJP activists comes amid a crackdown on near daily protests against the government.",
      "fecha": "2026-10-19T19:09:22+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Huelga educativa sin educación",
-   "fecha": "2026-10-19T19:05:18+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Huelga educativa sin educación",
-     "enlace": "https://www.abc.es/espana/huelga-educativa-educacion-20261019210041-nt.html",
-     "extracto": "",
-     "fecha": "2026-10-19T19:05:18+00:00"
     }
    ]
   },
@@ -2586,21 +2586,6 @@
    ]
   },
   {
-   "titulo": "Cargas contra estudiantes en la protesta contra Vito Quiles en la Autònoma de Barcelona",
-   "fecha": "2026-10-19T15:48:50+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "eldiario.es",
-     "idioma": "es",
-     "titulo": "Cargas contra estudiantes en la protesta contra Vito Quiles en la Autònoma de Barcelona",
-     "enlace": "https://www.eldiario.es/catalunya/mossos-realizan-controles-acceso-autonoma-barcelona-evitar-entrada-vito-quiles-campus_1_13598041.html",
-     "extracto": "Un dispositivo de los Mossos impide al agitador ultra llegar a la universidad, que le había denegado el acceso para evitar altercados La Autónoma de Barcelona pide a los Mossos que eviten que Vito…",
-     "fecha": "2026-10-19T15:48:50+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Ceuta eleva a 3.300 la cifra de menores tutelados tras las últimas acogidas",
    "fecha": "2026-10-19T15:45:44+00:00",
    "num_medios": 1,
@@ -2871,21 +2856,6 @@
    ]
   },
   {
-   "titulo": "Australian MP critically injured after being hit by car in apparent attack",
-   "fecha": "2026-10-19T14:09:54+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "BBC News",
-     "idioma": "en",
-     "titulo": "Australian MP critically injured after being hit by car in apparent attack",
-     "enlace": "https://www.bbc.co.uk/news/articles/cwp9g43g2p07o?at_medium=RSS&at_campaign=rss",
-     "extracto": "The independent politician is in hospital after what the prime minister says may have been a deliberate attack.",
-     "fecha": "2026-10-19T14:09:54+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Un bebé, un perro... Así han sido los impresionantes rescates en Oliva, una de las localidades más golpeadas",
    "fecha": "2026-10-19T14:08:42+00:00",
    "num_medios": 1,
@@ -3096,6 +3066,21 @@
    ]
   },
   {
+   "titulo": "Cuentas ultras vinculan falsamente a dos jóvenes con el asesinato de una mujer de 83 años en Burgos: \"Cuando me enteré, me dio un ataque de ansiedad\"",
+   "fecha": "2026-10-19T13:06:19+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "eldiario.es",
+     "idioma": "es",
+     "titulo": "Cuentas ultras vinculan falsamente a dos jóvenes con el asesinato de una mujer de 83 años en Burgos: \"Cuando me enteré, me dio un ataque de ansiedad\"",
+     "enlace": "https://www.eldiario.es/politica/cuentas-ultras-vinculan-falsamente-jovenes-asesinato-mujer-83-anos-burgos-han-destrozado-vida_1_13597186.html",
+     "extracto": "elDiario.es ha hablado con Ahmed, de 20 años, y Youssef, de 29, los dos jóvenes afectados por la mentira: \"Me ha tocado a mí como le podía haber tocado a cualquier otra persona racializada\" Detenidos…",
+     "fecha": "2026-10-19T13:06:19+00:00"
+    }
+   ]
+  },
+  {
    "titulo": "Vinted registra un incremento de anuncios vinculados a saqueos en Francia",
    "fecha": "2026-10-19T12:52:23+00:00",
    "num_medios": 1,
@@ -3272,6 +3257,21 @@
      "enlace": "https://www.bbc.co.uk/news/articles/ck98zlzyqle3o?at_medium=RSS&at_campaign=rss",
      "extracto": "The race heats up just days before the run-off between the left-wing incumbent and his right-wing challenger.",
      "fecha": "2026-10-19T11:41:24+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "Los jóvenes acusados falsamente de matar a una mujer en Burgos por cuentas de extrema derecha: “Nos han destrozado la vida”",
+   "fecha": "2026-10-19T11:38:32+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "El País",
+     "idioma": "es",
+     "titulo": "Los jóvenes acusados falsamente de matar a una mujer en Burgos por cuentas de extrema derecha: “Nos han destrozado la vida”",
+     "enlace": "https://elpais.com/espana/2026-10-19/los-jovenes-acusados-falsamente-de-matar-a-una-mujer-en-burgos-por-cuentas-de-extrema-derecha-nos-han-destrozado-la-vida.html",
+     "extracto": "Dos españoles, de 20 y 29 años, que no se conocen de nada, se ven envueltos por un bulo en un caso de asesinato tras la difusión de sus fotografías el pasado sábado",
+     "fecha": "2026-10-19T11:38:32+00:00"
     }
    ]
   },
@@ -3632,21 +3632,6 @@
      "enlace": "https://www.eldiario.es/economia/gobierno-ultima-decreto-mejoras-prestaciones-cuidados-menores-viudedad-incapacidad_1_13596145.html",
      "extracto": "El Ministerio de Seguridad Social pule un Real Decreto-Ley con algunas reformas pendientes en plena precampaña para las elecciones del 29 de noviembre y con el debate sobre las pensiones, alimentado…",
      "fecha": "2026-10-19T08:31:49+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Un grupo de 200 profesores corta la autovía A-3 en el inicio del cuarto día de huelga educativa de Madrid",
-   "fecha": "2026-10-19T08:17:57+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "El País",
-     "idioma": "es",
-     "titulo": "Un grupo de 200 profesores corta la autovía A-3 en el inicio del cuarto día de huelga educativa de Madrid",
-     "enlace": "https://elpais.com/espana/madrid/2026-10-19/un-grupo-de-200-profesores-corta-la-autovia-a-3-en-el-inicio-del-cuarto-dia-de-huelga-educativa-de-madrid.html",
-     "extracto": "Los docentes han realizado una acción en señal de protesta en Moratalaz, a la altura de Plaza Conde de Covatillas",
-     "fecha": "2026-10-19T08:17:57+00:00"
     }
    ]
   },
@@ -4339,6 +4324,211 @@
      "fecha": "2026-10-18T03:59:17+00:00"
     }
    ]
+  }
+ ],
+ "bulos": [
+  {
+   "medio": "EFE Verifica",
+   "titulo": "No es un saqueo a Nike durante las protestas en Francia, son imágenes grabadas en EE.UU. en 2023",
+   "enlace": "https://verifica.efe.com/falso-video-robo-protestas-francia-nike-ee-uu/",
+   "extracto": "¿Qué verificamos? Un video muestra a un grupo de jóvenes saqueando una tienda de Nike durante las protestas en Francia. Conclusión: Falso. La entrada No es un saqueo a Nike durante las protestas en…",
+   "fecha": "2026-10-19T19:07:22+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "No, los jóvenes de estas fotografías no son los detenidos por el asesinato de una anciana en Burgos",
+   "enlace": "https://verifica.efe.com/no-son-detenidos-muerte-burgos/",
+   "extracto": "¿Qué verificamos? Dos fotografías muestran a los menores detenidos por la muerte de una mujer de 83 años durante un robo en su vivienda de Burgos. Conclusión: Es falso. La entrada No, los jóvenes de…",
+   "fecha": "2026-10-19T16:29:59+00:00"
+  },
+  {
+   "medio": "Newtral",
+   "titulo": "Esta rueda de prensa del Gobierno de Bolivia llamando a declarar a Iglesias y Zapatero es de 2020",
+   "enlace": "https://www.newtral.es/bolivia-declarar-politicos-espanoles-iglesias-zapatero/20261019/",
+   "extracto": "El Ejecutivo bolivariano señalaba, sin presentar pruebas, una presunta financiación irregular por parte de su expresidente, Evo Morales, a políticos españoles.",
+   "fecha": "2026-10-19T15:46:28+00:00"
+  },
+  {
+   "medio": "Newtral",
+   "titulo": "Los últimos datos de gasto por habitante en sanidad, educación y vivienda no son los más bajos de la historia",
+   "enlace": "https://www.newtral.es/inversion-habitante-salud-vivienda-factcheck/20261019/",
+   "extracto": "La inversión por persona en sanidad y educación es, de hecho, la más alta de la historia, pese a lo que dice el diputado de Vox Carlos Hernández Quero.",
+   "fecha": "2026-10-19T13:51:49+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "El vídeo de manifestantes con banderas de Palestina y ninguna francesa no es de las actuales protestas",
+   "enlace": "https://verifica.efe.com/protesta-reciente-estudiantes-banderas-palestina-ninguna-francesa-falso/",
+   "extracto": "¿Qué verificamos? Un vídeo muestra una protesta de estudiantes en París donde se ven cientos de banderas palestinas y ninguna francesa. Conclusión: Es de 2025. La entrada El vídeo de manifestantes…",
+   "fecha": "2026-10-19T13:44:24+00:00"
+  },
+  {
+   "medio": "Newtral",
+   "titulo": "Estas imágenes no muestran a dos jóvenes “magrebíes” detenidos por la muerte de una anciana en Burgos",
+   "enlace": "https://www.newtral.es/anciana-muerta-burgos-extranjeros-magrebies/20261019/",
+   "extracto": "Perfiles de X publicaron los nombres y las fotografías de dos jóvenes y los acusaron sin pruebas de haber “asesinado” a la mujer. La Policía lo ha desmentido a Newtral.es.",
+   "fecha": "2026-10-19T13:23:14+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "La imagen de los ancianos en ropa interior asaltados por manifestantes en Francia está hecha con IA",
+   "enlace": "https://verifica.efe.com/la-imagen-de-los-ancianos-en-ropa-interior-asaltados-por-manifestantes-en-francia-esta-hecha-con-ia/",
+   "extracto": "¿Qué verificamos? Una imagen muestra a una pareja de ancianos desnudos en Francia después de que varios manifestantes les robasen la ropa. Conclusión: Está generada o manipulada con IA. La entrada La…",
+   "fecha": "2026-10-19T12:07:31+00:00"
+  },
+  {
+   "medio": "Newtral",
+   "titulo": "La imagen de dos ancianos en ropa interior supuestamente asaltados por manifestantes en París está hecha con IA",
+   "enlace": "https://www.newtral.es/ancianos-asaltados-protestas-paris-ropa-interior/20261019/",
+   "extracto": "La foto tiene la marca de SynthID, un indicador incluido en imágenes sintéticas, aunque desde Newtral.es no hemos podido determinar si la noticia es real.",
+   "fecha": "2026-10-19T10:16:48+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "Las imágenes de la Pantera Rosa en las protestas en Francia han sido creadas con IA",
+   "enlace": "https://verifica.efe.com/manifestante-pantera-rosa-protestas-en-francia-ia/",
+   "extracto": "¿Qué verificamoss? Imágenes captada durante las recientes protestas en París muestran a una persona disfrazada como la Pantera Rosa corriendo delante de la policía. Conclusión: Es falso. La entrada…",
+   "fecha": "2026-10-19T10:05:37+00:00"
+  },
+  {
+   "medio": "Newtral",
+   "titulo": "Esta concentración con banderas palestinas en Francia no corresponde a las protestas estudiantiles, se grabó en 2025",
+   "enlace": "https://www.newtral.es/concentracion-banderas-palestinas-francia-protestas-estudiantes/20261018/",
+   "extracto": "Esa movilización se produjo en mayo de 2025 en la parisina Plaza de la República para apoyar a la Franja de Gaza.",
+   "fecha": "2026-10-18T09:57:06+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "El candidato demócrata al Senado por Texas no fue ingresado en un psiquiátrico por un intento de suicidio",
+   "enlace": "https://verifica.efe.com/talarico-democrata-texas-ingresado-piquiatrico-falso/",
+   "extracto": "¿Qué verificamos? El candidato demócrata por Texas al Senado ingresó en un psiquiátrico tras un intento de suicido. Conclusión. Falso La entrada El candidato demócrata al Senado por Texas no fue…",
+   "fecha": "2026-10-16T16:30:38+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "La imagen «filtrada» de Netanyahu junto a una pizarra con un plan para «atacar» España está manipulada con IA",
+   "enlace": "https://verifica.efe.com/imagen-filtrada-de-netanyahu-pizarra-con-un-plan-para-atacar-espana-ia/",
+   "extracto": "¿Qué verificamos? Una imagen filtrada muestra a Benjamín Netanyahu planeando en una pizarra atacar mediáticamente a España. La entrada La imagen «filtrada» de Netanyahu junto a una pizarra con un…",
+   "fecha": "2026-10-16T15:23:31+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "El alcalde de Saint-Denis (Francia) no ha prohibido el consumo de alcohol para aplicar la ley sharía",
+   "enlace": "https://verifica.efe.com/alcalde-saint-denis-alcohol-sharia/",
+   "extracto": "¿Qué verificamos? Un video muestra a Bally Bagayoko, el alcalde de Saint Denis, Paris, prohibiendo el consumo del alcohol para aplicar la ley sharía. Conclusión: Falso. La entrada El alcalde de…",
+   "fecha": "2026-10-16T14:03:44+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "Un vídeo en el que una mujer pide «asesinar a todos los homosexuales» no fue emitido por la televisión de Palestina",
+   "enlace": "https://verifica.efe.com/falso-video-mujer-pide-asesinar-homosexuales-sea-television-palestina/",
+   "extracto": "¿Qué verificamos? Un vídeo muestra una emisión de la televisión palestina en el que una mujer dice que \"todos los homosexuales sin excepción deberían ser asesinados\". Conclusión: es falso. La entrada…",
+   "fecha": "2026-10-16T11:12:06+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "No es actual un video de manifestantes vandalizando una estación Transmilenio en Bogotá, son imágenes de 2019",
+   "enlace": "https://verifica.efe.com/manifestantes-vandalizan-estacion-transmilenio-falso/",
+   "extracto": "¿Qué verificamos? Un video muestra a manifestantes rompiendo los vidrios de una estación de Transmilenio en Bogotá, durante la jornada de protestas contra el presidente colombiano Abelardo de la…",
+   "fecha": "2026-10-15T18:28:11+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "La Guardia Civil no ha alertado de una estafa que suplanta al INE para robar datos",
+   "enlace": "https://verifica.efe.com/guardia-civil-alerta-personas-ine/",
+   "extracto": "¿Qué verificamos? La Guardia Civil alerta sobre personas que se están haciendo pasar por empleados del Instituto Nacional de Estadística para ir a casas y robar datos personales. Conclusión: Es…",
+   "fecha": "2026-10-15T11:06:58+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "No es un edificio colapsando durante el terremoto en Panamá, son imágenes grabadas en México en 2017",
+   "enlace": "https://verifica.efe.com/edificio-colapsando-panama-falso/",
+   "extracto": "¿Qué verificamos? Un video muestra un edificio colapsando durante el terremoto de magnitud 7,7 registrado el pasado 9 de octubre en Panamá. Conclusión: Falso. La entrada No es un edificio colapsando…",
+   "fecha": "2026-10-14T21:55:49+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "Nada prueba que el PP haya manipulado el audio del vídeo difundido de Sarah Santaolalla",
+   "enlace": "https://verifica.efe.com/nada-prueba-audio-pp-santaolalla/",
+   "extracto": "¿Qué verificamos? El Partido Popular subió a X un vídeo en el que aparece Sarah Santaolalla bailando con el audio manipulado para hacer creer que no era menor cuando se grabó. Conclusión: No hay…",
+   "fecha": "2026-10-14T15:53:02+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "Trump no ha culpado a Sánchez por la crisis de la vivienda en España",
+   "enlace": "https://verifica.efe.com/trump-vivienda-espana-sanchez/",
+   "extracto": "¿Qué verificamos? El presidente de Estados Unidos, Donald Trump, aseguró que España tiene \"un problemón con la vivienda\" y que el mandatario español Pedro Sánchez \"no puede resolverlo\".Conclusión: es…",
+   "fecha": "2026-10-14T13:34:42+00:00"
+  },
+  {
+   "medio": "Maldita.es",
+   "titulo": "No, Junts no ganó en ningún municipio de Madrid ni de Canarias en las europeas de 2024",
+   "enlace": "https://maldita.es/malditobulo/20261014/junts-europeas-municipios-madrid-canarias-2024/",
+   "extracto": "& Maldita.es, directo en tu WhatsApp Sigue nuestro canal En el escrutinio definitivo Junts no aparece como ganador de ningún municipio de Madrid ni Canarias Ni en Madrid ni en Canarias. Al revisar…",
+   "fecha": "2026-10-14T10:19:00+00:00"
+  },
+  {
+   "medio": "Verificat",
+   "titulo": "La IA, altavoz de falsas «alternativas naturales» al Ozempic para perder peso",
+   "enlace": "https://www.verificat.cat/es/ia-altavoz-falsas-alternativas-naturales-ozempic-perder-peso/",
+   "extracto": "Una investigación de Verificat sobre 230 respuestas de ChatGPT, Google y Meta AI revela que en la mitad de los casos no mencionan que es un medicamento para la diabetes y lo equiparan con soluciones…",
+   "fecha": "2026-10-14T07:31:01+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "Este vídeo no muestra la agresión a una periodista de Telemadrid en la acampada en Sol",
+   "enlace": "https://verifica.efe.com/video-no-muestra-agresion-periodista-telemadrid/",
+   "extracto": "¿Qué verificamos? Un vídeo muestra la agresión sufrida por una periodista de Telemadrid por parte de algunos manifestantes en Sol. Conclusión: Es falso. La entrada Este vídeo no muestra la agresión a…",
+   "fecha": "2026-10-13T17:07:36+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "Este vídeo no muestra a jóvenes de fiesta en las protestas de estudiantes en Francia, es un festival de música en 2025",
+   "enlace": "https://verifica.efe.com/video-no-muestra-protestas-estudiantes-francia-es-festival-musica-2025/",
+   "extracto": "¿Qué verificamos? Un vídeo muestra a personas bailando y se vincula a las protestas estudiantiles de Francia. Conclusión: es falso. La entrada Este vídeo no muestra a jóvenes de fiesta en las…",
+   "fecha": "2026-10-08T13:58:45+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "No, el piso de Maricarmen no se ha anunciado en Idealista tras su muerte: es una captura falsa",
+   "enlace": "https://verifica.efe.com/piso-mariarmen-muerte-anunciado-falso/",
+   "extracto": "¿Qué verificamos? El piso donde vivía Maricarmen Abascal, desahuciada en Madrid, se anunció en Idealista por 2.000 euros mensuales pocas horas después de su fallecimiento. Conclusión: Es falso. La…",
+   "fecha": "2026-10-08T12:29:30+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "México no ha aprobado una ley para criminalizar los memes contra el Gobierno",
+   "enlace": "https://verifica.efe.com/mexico-no-ha-aprobado-una-ley-para-criminalizar-los-memes-contra-el-gobierno/",
+   "extracto": "¿Qué verificamos?La presidenta de México, Claudia Sheinbaum, promovió una ley que busca castigar con multas y penas carcelarias a autores de memes sobre el Gobierno y servidores públicos. Conclusión:…",
+   "fecha": "2026-10-08T00:05:17+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "La falsa narrativa que asegura que el desahucio de Maricarmen fue un «plan orquestado»",
+   "enlace": "https://verifica.efe.com/desahucio-maricarmen-plan-orquestado/",
+   "extracto": "¿Qué verificamos? La portavoz del sindicato de Inquilinas desvela en una entrevista que Maricarmen, la anciana desahuciado en Madrid, ya pertenecía a la organización en 2025, lo que prueba que su…",
+   "fecha": "2026-10-07T16:09:05+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "ICE no ha deportado al fundador de Latinos por Trump, sino a un periodista salvadoreño",
+   "enlace": "https://verifica.efe.com/ice-no-ha-deportado-al-fundador-de-latinos-por-trump-sino-a-un-periodista-salvadoreno/",
+   "extracto": "¿Qué verificamos? El fundador del movimiento Latinos por Trump, Mario Guevara, fue deportado recientemente a El Salvador, tras pasar 110 días bajo la custodia del Servicio de Control de Inmigración y…",
+   "fecha": "2026-10-06T20:42:59+00:00"
+  },
+  {
+   "medio": "EFE Verifica",
+   "titulo": "No se ha declarado un brote de sarna en la acampada de Sol",
+   "enlace": "https://verifica.efe.com/brote-sarna-sol-falso/",
+   "extracto": "¿Qué verificamos? Se ha detectado un brote de sarna en la acampada por la vivienda instalada en la Puerta de Sol. Conclusión: Es falso. La entrada No se ha declarado un brote de sarna en la acampada…",
+   "fecha": "2026-10-06T15:15:40+00:00"
+  },
+  {
+   "medio": "Maldita.es",
+   "titulo": "Es falso que la IA de Meta pueda acceder a \"todos\" tus mensajes de WhatsApp si no activas la privacidad avanzada: solo puede leer aquellos en los que se la menciona o los que se comparten con ella",
+   "enlace": "https://maldita.es/malditobulo/20261006/es-falso-que-la-ia-de-meta-pueda-acceder-a-todos-tus-mensajes-de-whatsapp-si-no-activas-la-privacidad-avanzada-solo-puede-leer-aquellos-en-los-que-se-la-menciona-o-los-que-se-comparten-con-ella/",
+   "extracto": "No es cierto que la inteligencia artificial (IA) de Meta integrada en WhatsApp pueda acceder a “todos” tus mensajes si no activas la “Privacidad avanzada del chat”. Esta IA solo puede leer los…",
+   "fecha": "2026-10-06T06:57:00+00:00"
   }
  ]
 }
