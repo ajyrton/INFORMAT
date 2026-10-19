@@ -1,46 +1,7 @@
 {
- "actualizado": "2026-10-19T22:16:11.865438+00:00",
- "total_noticias": 312,
+ "actualizado": "2026-10-19T22:17:30.776179+00:00",
+ "total_noticias": 286,
  "historias": [
-  {
-   "titulo": "Renuncia toda la lista del PSOE de Palencia al Congreso al cambiar Ferraz al número uno",
-   "fecha": "2026-10-19T18:32:57+00:00",
-   "num_medios": 4,
-   "fuentes": [
-    {
-     "medio": "La Vanguardia",
-     "idioma": "es",
-     "titulo": "Renuncia toda la lista del PSOE de Palencia al Congreso al cambiar Ferraz al número uno",
-     "enlace": "https://www.lavanguardia.com/politica/20261019/11663048/renuncia-toda-lista-psoe-palencia-congreso-cambiar-ferraz-numero.html",
-     "extracto": "La candidatura la encabezaba en un principio Álvaro Bilbao, que fue sustituido por Mariluz Martínez Seijo",
-     "fecha": "2026-10-19T18:32:57+00:00"
-    },
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Dimite en bloque toda la candidatura del PSOE en Palencia tras imponer Ferraz al cabeza de lista",
-     "enlace": "https://www.abc.es/espana/castilla-leon/psoe-queda-candidatos-congreso-palencia-tras-imponer-20261019193046-nt.html",
-     "extracto": "Había ya un precedente. Fue en Ávila, en la cita electoral de 2023, cuando la dirección nacional de Ferraz impuso como número uno al Congreso a Manuel Arribas, lo que provocó que el resto de…",
-     "fecha": "2026-10-19T18:31:25+00:00"
-    },
-    {
-     "medio": "20minutos",
-     "idioma": "es",
-     "titulo": "Renuncia toda la lista del PSOE de Palencia al Congreso al cambiar Ferraz al número uno",
-     "enlace": "https://www.20minutos.es/castilla-y-leon/palencia/renuncia-toda-lista-psoe-palencia-congreso-cambiar-ferraz-numero-uno_7050730_0.html",
-     "extracto": "La decisión ratificada por el Comité Federal choca frontalmente con la voluntad mayoritaria de la militancia palentina.",
-     "fecha": "2026-10-19T18:27:50+00:00"
-    },
-    {
-     "medio": "eldiario.es",
-     "idioma": "es",
-     "titulo": "Crisis del PSOE de Palencia con Ferraz: renuncia toda la lista al Congreso tras la sustitución del 'número 1'",
-     "enlace": "https://www.eldiario.es/castilla-y-leon/politica/crisis-psoe-palencia-ferraz-renuncia-lista-congreso-sustitucion-numero-1_1_13598435.html",
-     "extracto": "La decisión se toma como protesta tras imponer como cabeza de lista a la veterana Mariluz Martínez Seijo El PSOE deja a Tudanca fuera del Senado pese al respaldo de las bases en Burgos Todos los…",
-     "fecha": "2026-10-19T18:04:38+00:00"
-    }
-   ]
-  },
   {
    "titulo": "Florida emite una orden de arresto contra Raúl Castro por el derribo de dos avionetas de EEUU en 1996",
    "fecha": "2026-10-19T17:35:05+00:00",
@@ -143,37 +104,6 @@
    ]
   },
   {
-   "titulo": "Francia impone toques de queda parciales en París y otras ciudades ante la ola de violencia urbana",
-   "fecha": "2026-10-19T19:30:19+00:00",
-   "num_medios": 3,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Francia impone toques de queda parciales en París y otras ciudades ante la ola de violencia urbana",
-     "enlace": "https://www.abc.es/internacional/ministro-interior-frances-reconoce-policia-perdida-control-20261019105150-nt.html",
-     "extracto": "El Gobierno francés busca una salida a la crisis social y la ola de violencia provocadas por las impactantes protestas del sábado –de carácter multitudinario y plagadas de disturbios y saqueos – sin…",
-     "fecha": "2026-10-19T19:30:19+00:00"
-    },
-    {
-     "medio": "El País",
-     "idioma": "es",
-     "titulo": "Francia impone toques de queda parciales en París y otras grandes ciudades para frenar los disturbios",
-     "enlace": "https://elpais.com/internacional/2026-10-19/macron-rechaza-la-dimision-del-ministro-del-interior-tras-los-disturbios-del-fin-de-semana.html",
-     "extracto": "El Ministerio del Interior, que se prepara para otra gran manifestación el sábado, prohíbe la libre circulación en zonas céntricas de la capital entre las 23.00 y las 6.00",
-     "fecha": "2026-10-19T18:48:49+00:00"
-    },
-    {
-     "medio": "La Vanguardia",
-     "idioma": "es",
-     "titulo": "Toques de queda parciales en París y otras ciudades francesas para frenar los disturbios",
-     "enlace": "https://www.lavanguardia.com/internacional/20261019/11662471/macron-rechaza-dimision-ministro-interior-fiasco-disturbios.html",
-     "extracto": "Macron rechaza la dimisión del ministro del Interior, quien reconoce su responsabilidad por no anticipar la gravedad de los alborotos, con 3.000 tiendas saqueadas",
-     "fecha": "2026-10-19T09:16:19+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Los Mossos impiden la entrada de Vito Quiles a la UAB y la manifestación en su contra termina con tensión y cargas",
    "fecha": "2026-10-19T18:39:16+00:00",
    "num_medios": 3,
@@ -205,64 +135,33 @@
    ]
   },
   {
-   "titulo": "El ponente del recurso del Defensor del Pueblo sobre la 'ley de nietos' se opone a su admisión por «prematuro»",
-   "fecha": "2026-10-19T18:31:35+00:00",
+   "titulo": "Renuncia toda la lista del PSOE de Palencia al Congreso al cambiar Ferraz al número uno",
+   "fecha": "2026-10-19T18:32:57+00:00",
    "num_medios": 3,
    "fuentes": [
     {
-     "medio": "ABC",
+     "medio": "La Vanguardia",
      "idioma": "es",
-     "titulo": "El ponente del recurso del Defensor del Pueblo sobre la 'ley de nietos' se opone a su admisión por «prematuro»",
-     "enlace": "https://www.abc.es/espana/ponente-recurso-defensor-pueblo-opone-admision-prematuro-20261019151052-nt.html",
-     "extracto": "El ponente del recurso del Defensor del Pueblo llevará al Pleno del TC un texto en el que propone la inadmisión del amparo al considerarlo «prematuro», pues el Tribunal Supremo aún mantiene abierta…",
-     "fecha": "2026-10-19T18:31:35+00:00"
-    },
-    {
-     "medio": "El Mundo",
-     "idioma": "es",
-     "titulo": "El informe interno del Tribunal Constitucional propone inadmitir el recurso del Defensor del Pueblo en la 'ley de nietos': \"Es prematuro\"",
-     "enlace": "https://www.elmundo.es/espana/2026/10/19/6ad5f59ae85ece82378b456f.html",
-     "extracto": "El ponente del TC propone la inadmisión del amparo. El recurso de Ángel Gabilondo ha sido este lunes avocado al Pleno por unanimidad. Leer",
-     "fecha": "2026-10-19T11:46:31+00:00"
-    },
-    {
-     "medio": "El País",
-     "idioma": "es",
-     "titulo": "El Constitucional pone en manos del Pleno la decisión sobre la admisión del recurso del Defensor del Pueblo sobre la ‘ley de nietos’",
-     "enlace": "https://elpais.com/espana/2026-10-19/el-pleno-del-constitucional-decidira-sobre-la-admision-del-recurso-del-defensor-del-pueblo-sobre-la-ley-de-nietos.html",
-     "extracto": "El informe previo del letrado en el que se ha basado el ponente, el magistrado conservador Enrique Arnaldo, defiende que el recurso es “prematuro” y propone su inadmisión",
-     "fecha": "2026-10-19T09:14:48+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "La jueza que investiga la invasión de Ceuta pide más información a Defensa y cita a tres consejeros",
-   "fecha": "2026-10-19T18:25:26+00:00",
-   "num_medios": 3,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "La jueza que investiga la invasión de Ceuta pide más información a Defensa y cita a tres consejeros",
-     "enlace": "https://www.abc.es/espana/jueza-investiga-invasion-ceuta-cita-tres-consejeros-20261019133847-nt.html",
-     "extracto": "La jueza de la Audiencia Nacional que investiga la invasión de Ceuta del pasado mes de julio ha citado como testigos a tres consejeros del gobierno de la ciudad autónoma y a varios agentes de…",
-     "fecha": "2026-10-19T18:25:26+00:00"
+     "titulo": "Renuncia toda la lista del PSOE de Palencia al Congreso al cambiar Ferraz al número uno",
+     "enlace": "https://www.lavanguardia.com/politica/20261019/11663048/renuncia-toda-lista-psoe-palencia-congreso-cambiar-ferraz-numero.html",
+     "extracto": "La candidatura la encabezaba en un principio Álvaro Bilbao, que fue sustituido por Mariluz Martínez Seijo",
+     "fecha": "2026-10-19T18:32:57+00:00"
     },
     {
      "medio": "20minutos",
      "idioma": "es",
-     "titulo": "La jueza Tardón cita como testigos a tres consejeros de Ceuta y reclama nuevos informes, grabaciones e imágenes satelitales",
-     "enlace": "https://www.20minutos.es/nacional/jueza-tardon-cita-como-testigos-tres-consejeros-ceuta-reclama-nuevos-informes-grabaciones-imagenes-satelitales_7050529_0.html",
-     "extracto": "La instructora manda requerimientos a la Guardia Civil, la Policía Nacional, el Estado Mayor de la Defensa, la Ciudad Autónoma de Ceuta y la Delegación del Gobierno.",
-     "fecha": "2026-10-19T12:04:31+00:00"
+     "titulo": "Renuncia toda la lista del PSOE de Palencia al Congreso al cambiar Ferraz al número uno",
+     "enlace": "https://www.20minutos.es/castilla-y-leon/palencia/renuncia-toda-lista-psoe-palencia-congreso-cambiar-ferraz-numero-uno_7050730_0.html",
+     "extracto": "La decisión ratificada por el Comité Federal choca frontalmente con la voluntad mayoritaria de la militancia palentina.",
+     "fecha": "2026-10-19T18:27:50+00:00"
     },
     {
      "medio": "eldiario.es",
      "idioma": "es",
-     "titulo": "La jueza cita a tres consejeros de Ceuta y pide a Defensa nuevos informes sobre la llegada masiva de migrantes",
-     "enlace": "https://www.eldiario.es/politica/jueza-cita-tres-consejeros-ceuta-pide-defensa-nuevos-informes-llegada-masiva-migrantes_1_13597084.html",
-     "extracto": "María Tardón pide que se identifique a un confidente de la Guardia Civil en Marruecos y a los agentes que lo manipulan para que se les cite a todos a declarar como testigos El CNI informa a la jueza…",
-     "fecha": "2026-10-19T11:41:08+00:00"
+     "titulo": "Crisis del PSOE de Palencia con Ferraz: renuncia toda la lista al Congreso tras la sustitución del 'número 1'",
+     "enlace": "https://www.eldiario.es/castilla-y-leon/politica/crisis-psoe-palencia-ferraz-renuncia-lista-congreso-sustitucion-numero-1_1_13598435.html",
+     "extracto": "La decisión se toma como protesta tras imponer como cabeza de lista a la veterana Mariluz Martínez Seijo El PSOE deja a Tudanca fuera del Senado pese al respaldo de las bases en Burgos Todos los…",
+     "fecha": "2026-10-19T18:04:38+00:00"
     }
    ]
   },
@@ -429,52 +328,6 @@
    ]
   },
   {
-   "titulo": "Meloni despliega el Ejército para defender Milán de las protestas",
-   "fecha": "2026-10-19T19:32:12+00:00",
-   "num_medios": 2,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Meloni despliega el Ejército para defender Milán de las protestas",
-     "enlace": "https://www.abc.es/internacional/meloni-despliega-ejercito-defender-milan-protestas-20261019200131-nt.html",
-     "extracto": "Después de las violentas protestas que tuvieron lugar este fin de semana en Milán, la primera ministra Giorgia Meloni ha convocado este lunes en la sede del Gobierno a sus principales aliados Antonio…",
-     "fecha": "2026-10-19T19:32:12+00:00"
-    },
-    {
-     "medio": "La Vanguardia",
-     "idioma": "es",
-     "titulo": "Meloni despliega al Ejército ante la oleada de protestas en Italia",
-     "enlace": "https://www.lavanguardia.com/internacional/20261019/11663020/meloni-despliega-ejercito-oleada-protestas-italia.html",
-     "extracto": "Los disturbios de jóvenes sin filiación política desconciertan a las autoridades mientras crecen las protestas en todo el país",
-     "fecha": "2026-10-19T17:15:46+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "La Corte Penal Internacional, el líder opositor de Tanzania y dos activistas iraníes, finalistas del Premio Sájarov",
-   "fecha": "2026-10-19T19:20:29+00:00",
-   "num_medios": 2,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "La Corte Penal Internacional, el líder opositor de Tanzania y dos activistas iraníes, finalistas del Premio Sájarov",
-     "enlace": "https://www.abc.es/internacional/corte-penal-internacional-lider-opositor-tanzania-dos-20261019204554-nt.html",
-     "extracto": "La Corte Penal Internacional y sus funcionarios; el líder opositor de Tanzania, Tundu Lissu , y las activistas iraníes Taraneh y Romina Rahimi «en nombre de todos los perseguidos por el régimen» de…",
-     "fecha": "2026-10-19T19:20:29+00:00"
-    },
-    {
-     "medio": "20minutos",
-     "idioma": "es",
-     "titulo": "La CPI, el líder opositor de Tanzania y dos activistas iraníes, finalistas del Sajarov del Parlamento Europeo",
-     "enlace": "https://www.20minutos.es/internacional/corte-penal-internacional-lider-opositor-tanzania-dos-activistas-iranies-finalistas-premio-sajarov-parlamento-europeo_7050411_0.html",
-     "extracto": "La Eurocámara decidirá esta misma semana al ganador de la edición de 2026 al galardón que premia la libertad de conciencia.",
-     "fecha": "2026-10-19T18:26:18+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Sánchez se compromete a subir el salario mínimo cada año si gobierna",
    "fecha": "2026-10-19T19:15:49+00:00",
    "num_medios": 2,
@@ -521,48 +374,25 @@
    ]
   },
   {
-   "titulo": "Huelga educativa sin educación",
-   "fecha": "2026-10-19T19:05:18+00:00",
+   "titulo": "Francia impone toques de queda parciales en París y otras grandes ciudades para frenar los disturbios",
+   "fecha": "2026-10-19T18:48:49+00:00",
    "num_medios": 2,
    "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Huelga educativa sin educación",
-     "enlace": "https://www.abc.es/espana/huelga-educativa-educacion-20261019210041-nt.html",
-     "extracto": "",
-     "fecha": "2026-10-19T19:05:18+00:00"
-    },
     {
      "medio": "El País",
      "idioma": "es",
-     "titulo": "Un grupo de 200 profesores corta la autovía A-3 en el inicio del cuarto día de huelga educativa de Madrid",
-     "enlace": "https://elpais.com/espana/madrid/2026-10-19/un-grupo-de-200-profesores-corta-la-autovia-a-3-en-el-inicio-del-cuarto-dia-de-huelga-educativa-de-madrid.html",
-     "extracto": "Los docentes han realizado una acción en señal de protesta en Moratalaz, a la altura de Plaza Conde de Covatillas",
-     "fecha": "2026-10-19T08:17:57+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Elon Musk promete regalar una acción de SpaceX a cada niño en EE. UU.: «Será la primera de muchas»",
-   "fecha": "2026-10-19T18:51:13+00:00",
-   "num_medios": 2,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Elon Musk promete regalar una acción de SpaceX a cada niño en EE. UU.: «Será la primera de muchas»",
-     "enlace": "https://www.abc.es/tecnologia/elon-musk-promete-regalar-accion-spacex-nino-20261019185450-nt.html",
-     "extracto": "Solo el hombre más rico del mundo podría permitirse realizar promesas milmillonarias. Por eso, Elon Musk ha anunciado un ambicioso plan filantrópico: regalar una acción de SpaceX, la empresa…",
-     "fecha": "2026-10-19T18:51:13+00:00"
+     "titulo": "Francia impone toques de queda parciales en París y otras grandes ciudades para frenar los disturbios",
+     "enlace": "https://elpais.com/internacional/2026-10-19/macron-rechaza-la-dimision-del-ministro-del-interior-tras-los-disturbios-del-fin-de-semana.html",
+     "extracto": "El Ministerio del Interior, que se prepara para otra gran manifestación el sábado, prohíbe la libre circulación en zonas céntricas de la capital entre las 23.00 y las 6.00",
+     "fecha": "2026-10-19T18:48:49+00:00"
     },
     {
      "medio": "La Vanguardia",
      "idioma": "es",
-     "titulo": "Elon Musk se compromete a regalar una acción de Space X a cada niño estadounidense",
-     "enlace": "https://www.lavanguardia.com/economia/20261019/11662989/elon-musk-compromete-regalar-accion-space-x-nino-estadounidense.html",
-     "extracto": "El empresario desembolsaría una cantidad de dienro que ascendería a más de 10.000 millones de euros",
-     "fecha": "2026-10-19T17:20:46+00:00"
+     "titulo": "Toques de queda parciales en París y otras ciudades francesas para frenar los disturbios",
+     "enlace": "https://www.lavanguardia.com/internacional/20261019/11662471/macron-rechaza-dimision-ministro-interior-fiasco-disturbios.html",
+     "extracto": "Macron rechaza la dimisión del ministro del Interior, quien reconoce su responsabilidad por no anticipar la gravedad de los alborotos, con 3.000 tiendas saqueadas",
+     "fecha": "2026-10-19T09:16:19+00:00"
     }
    ]
   },
@@ -820,25 +650,25 @@
    ]
   },
   {
-   "titulo": "Alberta heads to polls to decide whether to hold vote on separation from Canada",
-   "fecha": "2026-10-19T13:44:57+00:00",
+   "titulo": "La jueza Tardón cita como testigos a tres consejeros de Ceuta y reclama nuevos informes, grabaciones e imágenes satelitales",
+   "fecha": "2026-10-19T12:04:31+00:00",
    "num_medios": 2,
    "fuentes": [
     {
-     "medio": "BBC News",
-     "idioma": "en",
-     "titulo": "Alberta heads to polls to decide whether to hold vote on separation from Canada",
-     "enlace": "https://www.bbc.co.uk/news/articles/cxvgd0ymgzgyo?at_medium=RSS&at_campaign=rss",
-     "extracto": "Polling suggests most Albertans favour remaining part of the country, although the debate alone has proven divisive.",
-     "fecha": "2026-10-19T13:44:57+00:00"
+     "medio": "20minutos",
+     "idioma": "es",
+     "titulo": "La jueza Tardón cita como testigos a tres consejeros de Ceuta y reclama nuevos informes, grabaciones e imágenes satelitales",
+     "enlace": "https://www.20minutos.es/nacional/jueza-tardon-cita-como-testigos-tres-consejeros-ceuta-reclama-nuevos-informes-grabaciones-imagenes-satelitales_7050529_0.html",
+     "extracto": "La instructora manda requerimientos a la Guardia Civil, la Policía Nacional, el Estado Mayor de la Defensa, la Ciudad Autónoma de Ceuta y la Delegación del Gobierno.",
+     "fecha": "2026-10-19T12:04:31+00:00"
     },
     {
-     "medio": "The Guardian",
-     "idioma": "en",
-     "titulo": "‘This is not poker’: Alberta goes to polls in referendum that has exposed divisions, not least among separatists",
-     "enlace": "https://www.theguardian.com/world/2026/oct/19/alberta-goes-to-polls-in-referendum-divisions-separatists-canada",
-     "extracto": "Voters to be asked whether province should remain part of Canada or hold a second, binding independence vote Albertans are going to the polls to decide their place in Canada, in a referendum that has…",
-     "fecha": "2026-10-19T05:00:22+00:00"
+     "medio": "eldiario.es",
+     "idioma": "es",
+     "titulo": "La jueza cita a tres consejeros de Ceuta y pide a Defensa nuevos informes sobre la llegada masiva de migrantes",
+     "enlace": "https://www.eldiario.es/politica/jueza-cita-tres-consejeros-ceuta-pide-defensa-nuevos-informes-llegada-masiva-migrantes_1_13597084.html",
+     "extracto": "María Tardón pide que se identifique a un confidente de la Guardia Civil en Marruecos y a los agentes que lo manipulan para que se les cite a todos a declarar como testigos El CNI informa a la jueza…",
+     "fecha": "2026-10-19T11:41:08+00:00"
     }
    ]
   },
@@ -885,6 +715,29 @@
      "enlace": "https://elpais.com/educacion/2026-10-19/el-gobierno-aprueba-este-martes-45-millones-para-2000-nuevas-plazas-de-alojamientos-para-universitarios.html",
      "extracto": "La inversión permitirá ampliar la oferta de pisos con zonas compartidas en campus de Madrid, Castilla-La Mancha, Andalucía, Castilla y León, Comunidad Valenciana y Cataluña",
      "fecha": "2026-10-19T10:21:03+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "El informe interno del Tribunal Constitucional propone inadmitir el recurso del Defensor del Pueblo en la 'ley de nietos': \"Es prematuro\"",
+   "fecha": "2026-10-19T11:46:31+00:00",
+   "num_medios": 2,
+   "fuentes": [
+    {
+     "medio": "El Mundo",
+     "idioma": "es",
+     "titulo": "El informe interno del Tribunal Constitucional propone inadmitir el recurso del Defensor del Pueblo en la 'ley de nietos': \"Es prematuro\"",
+     "enlace": "https://www.elmundo.es/espana/2026/10/19/6ad5f59ae85ece82378b456f.html",
+     "extracto": "El ponente del TC propone la inadmisión del amparo. El recurso de Ángel Gabilondo ha sido este lunes avocado al Pleno por unanimidad. Leer",
+     "fecha": "2026-10-19T11:46:31+00:00"
+    },
+    {
+     "medio": "El País",
+     "idioma": "es",
+     "titulo": "El Constitucional pone en manos del Pleno la decisión sobre la admisión del recurso del Defensor del Pueblo sobre la ‘ley de nietos’",
+     "enlace": "https://elpais.com/espana/2026-10-19/el-pleno-del-constitucional-decidira-sobre-la-admision-del-recurso-del-defensor-del-pueblo-sobre-la-ley-de-nietos.html",
+     "extracto": "El informe previo del letrado en el que se ha basado el ponente, el magistrado conservador Enrique Arnaldo, defiende que el recurso es “prematuro” y propone su inadmisión",
+     "fecha": "2026-10-19T09:14:48+00:00"
     }
    ]
   },
@@ -981,6 +834,21 @@
    ]
   },
   {
+   "titulo": "Helen Haines: independent MP in critical condition in Melbourne’s Alfred hospital after being struck by car in Wangaratta – follow updates",
+   "fecha": "2026-10-19T22:14:19+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "The Guardian",
+     "idioma": "en",
+     "titulo": "Helen Haines: independent MP in critical condition in Melbourne’s Alfred hospital after being struck by car in Wangaratta – follow updates",
+     "enlace": "https://www.theguardian.com/australia-news/live/2026/oct/20/helen-haines-independent-mp-alleged-car-attack-wangaratta-melbourne-hospital-ntwnfb",
+     "extracto": "A joint counter-terrorism taskforce is investigating the incident, which Anthony Albanese alleged ‘wasn’t an accident’ ‘Deeply appalled’: politicians condemn alleged attack after Helen Haines…",
+     "fecha": "2026-10-19T22:14:19+00:00"
+    }
+   ]
+  },
+  {
    "titulo": "La vivienda manda a la pobreza a 770.000 trabajadores y tres veces más a inquilinos que a hipotecados",
    "fecha": "2026-10-19T22:01:25+00:00",
    "num_medios": 1,
@@ -992,21 +860,6 @@
      "enlace": "https://www.eldiario.es/economia/vivienda-manda-pobreza-770-000-trabajadores-tres-veces-inquilinos-hipotecados_1_13596860.html",
      "extracto": "Más del 30% de personas que viven de alquiler se convierten en pobres tras pagar la renta, un problema que se agudiza en hogares con menores y en sectores como la limpieza o la hostelería El gasto en…",
      "fecha": "2026-10-19T22:01:25+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Helen Haines: independent MP in critical condition in Melbourne’s Alfred hospital after being struck by car in Wangaratta – follow updates",
-   "fecha": "2026-10-19T21:57:29+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "The Guardian",
-     "idioma": "en",
-     "titulo": "Helen Haines: independent MP in critical condition in Melbourne’s Alfred hospital after being struck by car in Wangaratta – follow updates",
-     "enlace": "https://www.theguardian.com/australia-news/live/2026/oct/20/helen-haines-independent-mp-alleged-car-attack-wangaratta-melbourne-hospital-ntwnfb",
-     "extracto": "A joint counter-terrorism taskforce is investigating the incident, which Anthony Albanese alleged ‘wasn’t an accident’ ‘Deeply appalled’: politicians condemn alleged attack after Helen Haines…",
-     "fecha": "2026-10-19T21:57:29+00:00"
     }
    ]
   },
@@ -1127,21 +980,6 @@
      "enlace": "https://www.20minutos.es/deportes/tenis/john-mcenroe-leyenda-tenis-revuelta-carlos-alcaraz-es-mejor-que-le-ha-pasado-tenis-los-ultimos-10-anos_7050771_0.html",
      "extracto": "El extenista estadounidense visitó el programa presentado por David Broncano, donde repasó la actualidad del deporte y los grandes referentes españoles.",
      "fecha": "2026-10-19T21:22:41+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "El Rayo perdona con uno más en el estreno de Carvajal con el Getafe",
-   "fecha": "2026-10-19T21:16:38+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "El Rayo perdona con uno más en el estreno de Carvajal con el Getafe",
-     "enlace": "https://www.abc.es/deportes/futbol/rayo-perdona-estreno-carvajal-getafe-20261019231556-nt.html",
-     "extracto": "El Rayo Vallecano no consiguió pasar del empate (1-1) en el Coliseum pese a jugar con un efectivo más sobre el terreno de juego desde el minuto 28, cuando los de Beñat San José disfrutaban de un gol…",
-     "fecha": "2026-10-19T21:16:38+00:00"
     }
    ]
   },
@@ -1371,21 +1209,6 @@
    ]
   },
   {
-   "titulo": "Woody Allen visita el Prado y asegura que es «lo más excepcional» que existe",
-   "fecha": "2026-10-19T20:32:33+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Woody Allen visita el Prado y asegura que es «lo más excepcional» que existe",
-     "enlace": "https://www.abc.es/cultura/arte/woody-allen-visita-prado-asegura-excepcional-existe-20261019170000-nt.html",
-     "extracto": "El director de cine Woody Allen ha visitado durante este lunes Madrid y una de sus paradas ha sido el Museo del Prado . Tras su visita, el cineasta estadounidense ha insistido en que la colección…",
-     "fecha": "2026-10-19T20:32:33+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Trump signs order launching women’s health division at NIH, White House",
    "fecha": "2026-10-19T20:29:46+00:00",
    "num_medios": 1,
@@ -1461,21 +1284,6 @@
    ]
   },
   {
-   "titulo": "El Papa llama a Zelenski y le pide que colabore con Rusia para alcanzar una tregua humanitaria",
-   "fecha": "2026-10-19T20:21:24+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "El Papa llama a Zelenski y le pide que colabore con Rusia para alcanzar una tregua humanitaria",
-     "enlace": "https://www.abc.es/internacional/papa-llama-zelenski-pide-colabore-rusia-tregua-20261019185136-nt.html",
-     "extracto": "Después de hablar por teléfono con Vladímir Putin el viernes, el Papa ha llamado este lunes al presidente ucraniano, Volodímir Zelenski , al que ha pedido que colabore con Moscú para alcanzar una…",
-     "fecha": "2026-10-19T20:21:24+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Berlín: la posible coalición entre izquierda, verdes y socialdemócratas genera polémica",
    "fecha": "2026-10-19T20:15:00+00:00",
    "num_medios": 1,
@@ -1487,36 +1295,6 @@
      "enlace": "https://www.dw.com/es/berlín-la-posible-coalición-entre-izquierda-verdes-y-socialdemócratas-genera-polémica/a-79707489?maca=spa-rss-sp-all-1122-xml-mrss",
      "extracto": "La posible alianza de La Izquierda, Los Verdes y el SPD en Berlín desata controversias sobre vivienda, antisemitismo y seguridad. El debate sobre los límites de la cooperación política va más allá de…",
      "fecha": "2026-10-19T20:15:00+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Trump se muestra dispuesto a una trilateral con Putin y Xi en China",
-   "fecha": "2026-10-19T20:11:23+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Trump se muestra dispuesto a una trilateral con Putin y Xi en China",
-     "enlace": "https://www.abc.es/internacional/trump-muestra-dispuesto-trilateral-putin-china-20261018221056-nt.html",
-     "extracto": "Donald Trump se ha mostrado este lunes dispuesto a reunirse con Vladímir Putin y Xi Jinping en China el próximo mes de noviembre, en una cumbre trilateral propuesta por Rusia que podría abordar tanto…",
-     "fecha": "2026-10-19T20:11:23+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "La web electoral de Irene Montero: ni rastro de Podemos y solo con su cara y su nombre",
-   "fecha": "2026-10-19T20:02:30+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "La web electoral de Irene Montero: ni rastro de Podemos y solo con su cara y su nombre",
-     "enlace": "https://www.abc.es/espana/web-electoral-irene-montero-rastro-podemos-solo-20261019220211-nt.html",
-     "extracto": "El vodevil de la candidatura de unidad de izquierdas ha acabado con dos partidos enfrentados o socios en función del territorio. Ni los herederos de Sumar querían a Irene Montero ni ella estaba…",
-     "fecha": "2026-10-19T20:02:30+00:00"
     }
    ]
   },
@@ -1551,21 +1329,6 @@
    ]
   },
   {
-   "titulo": "Sánchez: «No pido una victoria como la de 2023, sino amplia de las fuerzas progresistas»",
-   "fecha": "2026-10-19T19:50:58+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Sánchez: «No pido una victoria como la de 2023, sino amplia de las fuerzas progresistas»",
-     "enlace": "https://www.abc.es/espana/castilla-leon/sanchez-pido-victoria-2023-amplia-fuerzas-progresistas-20261019201438-nt.html",
-     "extracto": "Con la vista puesta en el 29 de noviembre e incluso a cuatro años vista más allá en los que dibujaba cómo imagina España para entonces, el secretario general del PSOE y presidente del Gobierno, Pedro…",
-     "fecha": "2026-10-19T19:50:58+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "One killed in US shooting near mosque in Columbus, Ohio",
    "fecha": "2026-10-19T19:50:20+00:00",
    "num_medios": 1,
@@ -1596,36 +1359,6 @@
    ]
   },
   {
-   "titulo": "La costa valenciana sobrevive a una dana que hizo recordar la tragedia de hace dos años",
-   "fecha": "2026-10-19T19:41:44+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "La costa valenciana sobrevive a una dana que hizo recordar la tragedia de hace dos años",
-     "enlace": "https://www.abc.es/espana/comunidad-valenciana/dana-engulle-pego-oliva-evidencia-lecciones-aprendidas-20261020213112-nt.html",
-     "extracto": "Llovía sobre mojado en las comarcas de La Safor y la Marina Alta, dos zonas del litoral mediterráneo limítrofes en las provincias de Valencia y Alicante, respectivamente, que amanecieron este lunes…",
-     "fecha": "2026-10-19T19:41:44+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "El desprendimiento de una roca en Málaga provoca el quinto muerto de Adam",
-   "fecha": "2026-10-19T19:40:16+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "El desprendimiento de una roca en Málaga provoca el quinto muerto de Adam",
-     "enlace": "https://www.abc.es/sociedad/temporal-lluvias-tormentas-comunidad-valenciana-cataluna-baleares-20261019091904-di.html",
-     "extracto": "Sigue en directo la última hora sobre las tormentas y las fuertes lluvias en la Comunidad Valenciana, Cataluña, Baleares y el resto de España por la dana Adam hoy.",
-     "fecha": "2026-10-19T19:40:16+00:00"
-    }
-   ]
-  },
-  {
    "titulo": "Residents hoisted from rooftops amid Spain’s deadly flooding",
    "fecha": "2026-10-19T19:38:40+00:00",
    "num_medios": 1,
@@ -1637,21 +1370,6 @@
      "enlace": "https://www.aljazeera.com/video/newsfeed/2026/10/19/residents-hoisted-from-rooftops-amid-spains-deadly-flooding?traffic_source=rss",
      "extracto": "Spain’s military is hoisting residents from the rooftops of their flooded homes.",
      "fecha": "2026-10-19T19:38:40+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Del 1-O a la amnistía: el traje a medida para borrar el 'procès'",
-   "fecha": "2026-10-19T19:29:20+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Del 1-O a la amnistía: el traje a medida para borrar el 'procès'",
-     "enlace": "https://www.abc.es/espana/amnistia-traje-medida-borrar-proces-20261010194659-nt.html",
-     "extracto": "Código Desktop Imagen para móvil, amp y app Código móvil Código AMP Código APPComo si los hechos ocurridos en Cataluña hasta octubre de 2017 nunca hubieran sucedido. Al menos a ojos de la Justicia.…",
-     "fecha": "2026-10-19T19:29:20+00:00"
     }
    ]
   },
@@ -1682,21 +1400,6 @@
      "enlace": "https://www.eldiario.es/comunitat-valenciana/cuatro-fallecidos-millar-rescates-registros-historicos-dana-adam-gente-perdido-2024_1_13598067.html",
      "extracto": "La franja litoral entre Gandia, Oliva y Pego ha sido la más afectada, con registros de hasta 720 litros por metro cuadrado y 380 desalojados; las clases seguirán suspendidas en seis municipios y la…",
      "fecha": "2026-10-19T19:21:06+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "El rescate de Teresa, la mujer de 93 años a la que 'salvó' una tabla de paddle-surf",
-   "fecha": "2026-10-19T19:12:45+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "El rescate de Teresa, la mujer de 93 años a la que 'salvó' una tabla de paddle-surf",
-     "enlace": "https://www.abc.es/espana/comunidad-valenciana/rescates-canoas-tablas-paddle-surf-vecinos-ayudado-20261019132110-nt.html",
-     "extracto": "En Oliva , los vecinos se han visto obligados a auxiliar con canoas a otros residentes en plantas bajas hasta la llegada de los servicios de emergencia. En Gandía, agentes de la Policía Nacional han…",
-     "fecha": "2026-10-19T19:12:45+00:00"
     }
    ]
   },
@@ -1757,21 +1460,6 @@
      "enlace": "https://www.dw.com/es/el-futuro-climático-del-planeta-se-juega-en-las-elecciones-de-brasil/a-79706695?maca=spa-rss-sp-all-1122-xml-mrss",
      "extracto": "La amenaza sobre la Amazonía y su función reguladora del clima pone en juego la protección ambiental, la lucha contra la deforestación y la acción climática mundial. Las próximas elecciones…",
      "fecha": "2026-10-19T18:56:00+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Dalí, en el diván de Freud",
-   "fecha": "2026-10-19T18:55:44+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Dalí, en el diván de Freud",
-     "enlace": "https://www.abc.es/cultura/arte/dali-divan-freud-20261019171654-nt.html",
-     "extracto": "«La única diferencia entre un loco y yo es que yo no estoy loco». Son palabras de un genio, Salvador Dalí . Como cantaba Mecano, andamos justos de genios como él. En 2022, el Museo Belvedere de Viena…",
-     "fecha": "2026-10-19T18:55:44+00:00"
     }
    ]
   },
@@ -1881,77 +1569,17 @@
    ]
   },
   {
-   "titulo": "Una soltera se encara con 'First Dates', disgustada con su pretendiente: «No es normal la cita que me trajeron»",
-   "fecha": "2026-10-19T18:29:02+00:00",
+   "titulo": "La CPI, el líder opositor de Tanzania y dos activistas iraníes, finalistas del Sajarov del Parlamento Europeo",
+   "fecha": "2026-10-19T18:26:18+00:00",
    "num_medios": 1,
    "fuentes": [
     {
-     "medio": "ABC",
+     "medio": "20minutos",
      "idioma": "es",
-     "titulo": "Una soltera se encara con 'First Dates', disgustada con su pretendiente: «No es normal la cita que me trajeron»",
-     "enlace": "https://www.abc.es/play/television/noticias/soltera-encara-first-dates-disgustada-pretendiente-normal-20261019202902-nt.html",
-     "extracto": "Toda ilusión de vivir un romance apasionado con su pretendiente de 'First Dates' se le rompió a Miladys (49) en cuanto vio a Raymon (60) bailando 'Gasolina' de Daddy Yankee. El 'tumbao' dominicano de…",
-     "fecha": "2026-10-19T18:29:02+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "El Príncipe Harry se libra de la demanda de la ONG que fundó ante el miedo de no poder hacer frente a las consecuencias financieras",
-   "fecha": "2026-10-19T18:28:29+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "El Príncipe Harry se libra de la demanda de la ONG que fundó ante el miedo de no poder hacer frente a las consecuencias financieras",
-     "enlace": "https://www.abc.es/gente/principe-harry-libra-demanda-ong-fundo-ante-20261019181700-nt.html",
-     "extracto": "El Príncipe Harry se ha librado de una de sus batallas legales. Según publican los medios británicos, la organización Sentebale ha pausado su demanda contra el que fuera su cofundador, el Duque de…",
-     "fecha": "2026-10-19T18:28:29+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Madrid impone 3.676 multas a los tuk tuk mientras trabaja en una normativa propia",
-   "fecha": "2026-10-19T18:27:51+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Madrid impone 3.676 multas a los tuk tuk mientras trabaja en una normativa propia",
-     "enlace": "https://www.abc.es/espana/madrid/madrid-impone-3676-multas-tuk-tuk-trabaja-20261019183212-nt.html",
-     "extracto": "Mientras el Ayuntamiento de Madrid sigue buscando el encaje jurídico para poder poner coto a la selva de tuk tuk que ha proliferado en espacios tan céntricos como el entorno del Palacio Real, la…",
-     "fecha": "2026-10-19T18:27:51+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Melissa Parke: «El rearme nuclear para Europa significa que será la primera en ser destruida»",
-   "fecha": "2026-10-19T18:27:31+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Melissa Parke: «El rearme nuclear para Europa significa que será la primera en ser destruida»",
-     "enlace": "https://www.abc.es/internacional/melissa-parke-rearme-nuclear-europa-significa-primera-20261019191949-nt.html",
-     "extracto": "Melissa Parke (Australia, 1966) detiene sus palabras para masticar una respuesta. Piensa, durante esa breve tregua, en cómo sería el día después del fin del mundo y relata, con un detenimiento mayor…",
-     "fecha": "2026-10-19T18:27:31+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Los neandertales llegaron hasta Navarra: hallan una mano con ADN conservado",
-   "fecha": "2026-10-19T18:26:34+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Los neandertales llegaron hasta Navarra: hallan una mano con ADN conservado",
-     "enlace": "https://www.abc.es/ciencia/neandertales-llegaron-navarra-hallan-mano-adn-conservado-20261019193220-nt.html",
-     "extracto": "La mano de Irulegi, una lámina de bronce que contiene el primer testimonio escrito en lengua vascona, se descubrió en el monte del mismo nombre, en Navarra, en 2021. Ahora, no muy lejos, ha aparecido…",
-     "fecha": "2026-10-19T18:26:34+00:00"
+     "titulo": "La CPI, el líder opositor de Tanzania y dos activistas iraníes, finalistas del Sajarov del Parlamento Europeo",
+     "enlace": "https://www.20minutos.es/internacional/corte-penal-internacional-lider-opositor-tanzania-dos-activistas-iranies-finalistas-premio-sajarov-parlamento-europeo_7050411_0.html",
+     "extracto": "La Eurocámara decidirá esta misma semana al ganador de la edición de 2026 al galardón que premia la libertad de conciencia.",
+     "fecha": "2026-10-19T18:26:18+00:00"
     }
    ]
   },
@@ -1997,21 +1625,6 @@
      "enlace": "https://www.dw.com/es/sin-hogar-frente-a-una-lujosa-mansión-londinense-cómo-vive-un-sueco-bajo-el-porche-de-una-propiedad-valorada-en-244-millones-de-euros/a-79707095?maca=spa-rss-sp-all-1122-xml-mrss",
      "extracto": "Anders Fernstedt, de origen sueco, vive en pleno centro de Londres sin dinero ni vivienda. Su refugio está bajo el techo de la entrada de una de las propiedades más caras de la capital británica.",
      "fecha": "2026-10-19T18:21:00+00:00"
-    }
-   ]
-  },
-  {
-   "titulo": "Tarta de queso y chirimoya al horno",
-   "fecha": "2026-10-19T18:19:18+00:00",
-   "num_medios": 1,
-   "fuentes": [
-    {
-     "medio": "ABC",
-     "idioma": "es",
-     "titulo": "Tarta de queso y chirimoya al horno",
-     "enlace": "https://www.abc.es/recetasderechupete/tarta-de-queso-y-chirimoya-al-horno-cremosa-y-suave/179480/",
-     "extracto": "",
-     "fecha": "2026-10-19T18:19:18+00:00"
     }
    ]
   },
@@ -2271,6 +1884,21 @@
    ]
   },
   {
+   "titulo": "Elon Musk se compromete a regalar una acción de Space X a cada niño estadounidense",
+   "fecha": "2026-10-19T17:20:46+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "La Vanguardia",
+     "idioma": "es",
+     "titulo": "Elon Musk se compromete a regalar una acción de Space X a cada niño estadounidense",
+     "enlace": "https://www.lavanguardia.com/economia/20261019/11662989/elon-musk-compromete-regalar-accion-space-x-nino-estadounidense.html",
+     "extracto": "El empresario desembolsaría una cantidad de dienro que ascendería a más de 10.000 millones de euros",
+     "fecha": "2026-10-19T17:20:46+00:00"
+    }
+   ]
+  },
+  {
    "titulo": "Trump backs Netanyahu: Is the US planning a new Iran attack with Israel?",
    "fecha": "2026-10-19T17:16:22+00:00",
    "num_medios": 1,
@@ -2282,6 +1910,21 @@
      "enlace": "https://www.aljazeera.com/news/2026/10/19/trump-backs-netanyahu-is-the-us-planning-a-new-iran-attack-with-israel?traffic_source=rss",
      "extracto": "Trump’s endorsement comes after he previously shied away from fully backing Netanyahu’s election campaign.",
      "fecha": "2026-10-19T17:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "Meloni despliega al Ejército ante la oleada de protestas en Italia",
+   "fecha": "2026-10-19T17:15:46+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "La Vanguardia",
+     "idioma": "es",
+     "titulo": "Meloni despliega al Ejército ante la oleada de protestas en Italia",
+     "enlace": "https://www.lavanguardia.com/internacional/20261019/11663020/meloni-despliega-ejercito-oleada-protestas-italia.html",
+     "extracto": "Los disturbios de jóvenes sin filiación política desconciertan a las autoridades mientras crecen las protestas en todo el país",
+     "fecha": "2026-10-19T17:15:46+00:00"
     }
    ]
   },
@@ -3078,6 +2721,18 @@
      "extracto": "elDiario.es ha hablado con Ahmed, de 20 años, y Youssef, de 29, los dos jóvenes afectados por la mentira: \"Me ha tocado a mí como le podía haber tocado a cualquier otra persona racializada\" Detenidos…",
      "fecha": "2026-10-19T13:06:19+00:00"
     }
+   ],
+   "bulos_relacionados": [
+    {
+     "medio": "EFE Verifica",
+     "titulo": "No, los jóvenes de estas fotografías no son los detenidos por el asesinato de una anciana en Burgos",
+     "enlace": "https://verifica.efe.com/no-son-detenidos-muerte-burgos/"
+    },
+    {
+     "medio": "Newtral",
+     "titulo": "Estas imágenes no muestran a dos jóvenes “magrebíes” detenidos por la muerte de una anciana en Burgos",
+     "enlace": "https://www.newtral.es/anciana-muerta-burgos-extranjeros-magrebies/20261019/"
+    }
    ]
   },
   {
@@ -3273,6 +2928,13 @@
      "extracto": "Dos españoles, de 20 y 29 años, que no se conocen de nada, se ven envueltos por un bulo en un caso de asesinato tras la difusión de sus fotografías el pasado sábado",
      "fecha": "2026-10-19T11:38:32+00:00"
     }
+   ],
+   "bulos_relacionados": [
+    {
+     "medio": "EFE Verifica",
+     "titulo": "No, los jóvenes de estas fotografías no son los detenidos por el asesinato de una anciana en Burgos",
+     "enlace": "https://verifica.efe.com/no-son-detenidos-muerte-burgos/"
+    }
    ]
   },
   {
@@ -3407,6 +3069,18 @@
      "enlace": "https://www.eldiario.es/rastreador/vox-difunde-imagen-falsa-ancianos-semidesnudos-protestas-francia-partio-cuenta-israel_132_13596760.html",
      "extracto": "Una cuenta de X radicada en Israel ha publicado este fin de semana una foto generada por IA sobre un supuesto ataque de los manifestantes a una pareja en París, que ha conseguido millones de…",
      "fecha": "2026-10-19T10:40:57+00:00"
+    }
+   ],
+   "bulos_relacionados": [
+    {
+     "medio": "EFE Verifica",
+     "titulo": "La imagen de los ancianos en ropa interior asaltados por manifestantes en Francia está hecha con IA",
+     "enlace": "https://verifica.efe.com/la-imagen-de-los-ancianos-en-ropa-interior-asaltados-por-manifestantes-en-francia-esta-hecha-con-ia/"
+    },
+    {
+     "medio": "Newtral",
+     "titulo": "La imagen de dos ancianos en ropa interior supuestamente asaltados por manifestantes en París está hecha con IA",
+     "enlace": "https://www.newtral.es/ancianos-asaltados-protestas-paris-ropa-interior/20261019/"
     }
    ]
   },
@@ -3636,6 +3310,21 @@
    ]
   },
   {
+   "titulo": "Un grupo de 200 profesores corta la autovía A-3 en el inicio del cuarto día de huelga educativa de Madrid",
+   "fecha": "2026-10-19T08:17:57+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "El País",
+     "idioma": "es",
+     "titulo": "Un grupo de 200 profesores corta la autovía A-3 en el inicio del cuarto día de huelga educativa de Madrid",
+     "enlace": "https://elpais.com/espana/madrid/2026-10-19/un-grupo-de-200-profesores-corta-la-autovia-a-3-en-el-inicio-del-cuarto-dia-de-huelga-educativa-de-madrid.html",
+     "extracto": "Los docentes han realizado una acción en señal de protesta en Moratalaz, a la altura de Plaza Conde de Covatillas",
+     "fecha": "2026-10-19T08:17:57+00:00"
+    }
+   ]
+  },
+  {
    "titulo": "Bangladesh says it was not informed of its citizens' execution by Saudi Arabia",
    "fecha": "2026-10-19T08:17:19+00:00",
    "num_medios": 1,
@@ -3737,6 +3426,21 @@
      "enlace": "https://www.20minutos.es/nacional/ultimas-noticias-dana-adam-valencia-alicante-cataluna-almeria-lluvia-alertas-tiempo-inundaciones-rescates-directo_7050269_6.html",
      "extracto": "Última hora de la DANA Adam y sus consecuencias en todo el litoral mediterráneo y las Islas Baleares: inundaciones, rescates y alertas.",
      "fecha": "2026-10-19T05:46:59+00:00"
+    }
+   ]
+  },
+  {
+   "titulo": "‘This is not poker’: Alberta goes to polls in referendum that has exposed divisions, not least among separatists",
+   "fecha": "2026-10-19T05:00:22+00:00",
+   "num_medios": 1,
+   "fuentes": [
+    {
+     "medio": "The Guardian",
+     "idioma": "en",
+     "titulo": "‘This is not poker’: Alberta goes to polls in referendum that has exposed divisions, not least among separatists",
+     "enlace": "https://www.theguardian.com/world/2026/oct/19/alberta-goes-to-polls-in-referendum-divisions-separatists-canada",
+     "extracto": "Voters to be asked whether province should remain part of Canada or hold a second, binding independence vote Albertans are going to the polls to decide their place in Canada, in a referendum that has…",
+     "fecha": "2026-10-19T05:00:22+00:00"
     }
    ]
   },

@@ -26,7 +26,7 @@ SIM_THRESHOLD = 0.30        # similitud mínima para agrupar (0-1)
 MAX_PER_FEED = 40
 SNIPPET_LEN = 200
 HOAX_MAX_AGE_DAYS = 14      # antigüedad máxima de los desmentidos
-HOAX_SIM_THRESHOLD = 0.35   # similitud mínima para enlazar un bulo con una noticia
+HOAX_SIM_THRESHOLD = 0.20   # similitud mínima para enlazar un bulo con una noticia
 
 # Titulares de verificadores que indican que algo es falso o engañoso
 # (se comparan sin tildes y en minúsculas).
